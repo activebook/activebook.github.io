@@ -1,0 +1,144 @@
+/* Basic Reset & Font */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #2c3e50; /* Dark blue-grey */
+    color: #ecf0f1; /* Light grey */
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid #3498db; /* Blue accent */
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Main Content Area */
+main {
+    max-width: 1200px;
+    margin: 2rem auto; /* Center the content */
+    padding: 0 1rem;
+}
+
+/* Repository Grid Layout */
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 1.5rem; /* Spacing between cards */
+}
+
+/* Individual Repository Card Styling */
+.repo-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Push metadata to bottom */
+    min-height: 150px; /* Ensure cards have some minimum height */
+}
+
+.repo-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.repo-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: #3498db; /* Blue link color */
+}
+
+.repo-card h3 a {
+    text-decoration: none;
+    color: inherit; /* Inherit blue color from h3 */
+}
+
+.repo-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.repo-card p {
+    font-size: 0.9rem;
+    color: #555;
+    flex-grow: 1; /* Allow description to take available space */
+    margin-bottom: 1rem;
+}
+
+/* Metadata (Language, Stars, Forks) */
+.repo-meta {
+    font-size: 0.8rem;
+    color: #777;
+    border-top: 1px solid #eee;
+    padding-top: 0.75rem;
+    margin-top: auto; /* Push to bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 0.5rem;
+}
+
+.repo-meta span {
+    display: inline-flex; /* Align icons and text */
+    align-items: center;
+    margin-right: 1rem; /* Space between meta items */
+}
+
+.repo-meta span:last-child {
+    margin-right: 0;
+}
+
+.repo-meta svg { /* Simple inline SVG for icons */
+    width: 1em;
+    height: 1em;
+    margin-right: 0.3em;
+    fill: currentColor;
+}
+
+/* Loading & Error Message Styling */
+#loading-message,
+#error-message {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    grid-column: 1 / -1; /* Span all columns if grid is active */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #777;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
