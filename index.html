@@ -3,29 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activebook Repositories</title>
+    <title>Activebook Projects Showcase</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Optional: Add Font Awesome for icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
 </head>
 <body>
     <header>
-        <h1>Activebook Organization Repositories</h1>
-        <p>Explore the projects developed under the Activebook organization.</p>
+        <h1>Welcome to Activebook</h1>
+        <p>Explore the projects developed and hosted by the Activebook organization.</p>
     </header>
 
     <main>
-        <div id="repo-container" class="repo-grid">
-            <!-- Repositories will be loaded here by JavaScript -->
-            <p id="loading-message">Loading repositories...</p>
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+
+            <!-- Project Card: gllm -->
+            <div class="project-card">
+                <h3>gllm</h3>
+                <p>A powerful Golang command-line tool for interacting seamlessly with various Large Language Models (LLMs).</p>
+                <div class="project-links">
+                    <a href="gllm/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project Page</a>
+                    <a href="https://github.com/activebook/gllm" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                </div>
+            </div>
+
+            <!-- Project Card: clash_forge -->
+            <div class="project-card">
+                <h3>Clash Forge</h3>
+                <p>Manage Clash proxy configurations. Converts subscriptions & URLs to YAML, resolves DNS, supports multiple protocols.</p>
+                <div class="project-links">
+                    <a href="clash_forge/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project Page</a>
+                    <a href="https://github.com/activebook/clash_forge" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                </div>
+            </div>
+
+            <!-- Project Card: SakanaVision -->
+            <div class="project-card">
+                <h3>SakanaVision</h3>
+                <p>A project related to visual elements or interactions, potentially leveraging the Sakana widget concept. (Update description as needed)</p>
+                <div class="project-links">
+                    <a href="SakanaVision/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project Page</a>
+                    <a href="https://github.com/activebook/SakanaVision" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                </div>
+            </div>
+
+            <!-- Project Card: SakanaLens -->
+            <div class="project-card">
+                <h3>SakanaLens</h3>
+                <p>Another tool possibly related to the Sakana widget, perhaps focused on analysis, filtering, or a specific perspective. (Update description as needed)</p>
+                <div class="project-links">
+                    <a href="SakanaLens/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project Page</a>
+                    <a href="https://github.com/activebook/SakanaLens" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                </div>
+            </div>
+
+            <!-- Project Card: KokoroVoice -->
+            <div class="project-card">
+                <h3>KokoroVoice</h3>
+                <p>A project likely focused on voice synthesis, recognition, processing, or audio manipulation. (Update description as needed)</p>
+                <div class="project-links">
+                    <a href="KokoroVoice/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project Page</a>
+                    <a href="https://github.com/activebook/KokoroVoice" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                </div>
+            </div>
+
+            <!-- Add more project cards here as needed -->
+
         </div>
     </main>
 
     <footer>
-        <p>Powered by <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> Pages & API</p>
+        <p>Visit the <a href="https://github.com/activebook" target="_blank" rel="noopener noreferrer">Activebook Organization on GitHub</a> for more.</p>
+        <p>&copy; 2024 Activebook</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
