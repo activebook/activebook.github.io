@@ -15,11 +15,11 @@ New worlds to explore
 
 ## Languages for each project
 
-- 1, [gllm](Golang)
-- 2, [clash_forge](Dart)
-- 3, [SakanaVision](Javascript)
-- 4, [SakanaLens](Python)
-- 5, [KokoroVoice](Typescript)
+- [gllm] - Golang
+- [clash_forge] - Dart
+- [SakanaVision] - Javascript
+- [SakanaLens] - Python
+- [KokoroVoice] - Typescript
 
 ## Projects description
 
