@@ -1,17 +1,9 @@
 # activebook.github.io
-Here is all my projects webpage:https://activebook.github.io/
-I wanna you help me to make it cool and elegant.
-because it host on github pages,so you can't add a lot of interactive elements.
-but you can use html,css,js to make it cool.
-and because every project has their own screenshots, so i think you can use css to make it more elegant.
 
-**Important:**
-
-1, don't write css your own, just use any cool css framework.
-2, don't write pure js, just use js framework.
-
-
-Below are my projects details
+My Agora Lab
+Code unlocks the mind
+Granting access to freedom
+New worlds to explore
 
 ## Projects undergoing
 
