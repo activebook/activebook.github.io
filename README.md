@@ -13,6 +13,14 @@ New worlds to explore
 - 4, [SakanaLens](https://activebook.github.io/SakanaLens/)
 - 5, [KokoroVoice](https://activebook.github.io/KokoroVoice)
 
+## Languages for each project
+
+- 1, [gllm](Golang)
+- 2, [clash_forge](Dart)
+- 3, [SakanaVision](Javascript)
+- 4, [SakanaLens](Python)
+- 5, [KokoroVoice](Typescript)
+
 ## Projects description
 
 - gllm
