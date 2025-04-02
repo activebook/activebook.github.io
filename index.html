@@ -3,242 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activebook Interactive Showcase (Tailwind)</title>
-    <!-- Tailwind Play CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tailwind Configuration (Place *before* the CDN script if extending) -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    // Add custom utilities or variants if needed
-                    transformStyle: { // Custom utility for transform-style
-                        '3d': 'preserve-3d',
-                    },
-                    backfaceVisibility: { // Custom utility for backface-visibility
-                        'hidden': 'hidden',
-                    },
-                    rotate: { // Add rotateY if not default
-                       'y-180': 'rotateY(180deg)',
-                    },
-                }
-            },
-            plugins: [
-                 // Plugin needed for transform-style and backface-visibility utilities
-                 // NOTE: For Play CDN, complex plugins might not work as expected.
-                 // We'll rely on theme extension and direct class application.
-                 // Adding variants directly might be complex via CDN config.
-                 // We will use a JS class toggle ('flipped') instead of a custom variant.
-            ],
+    <title>ActiveBook Projects</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4e73df;
+            --secondary: #f8f9fc;
+            --accent: #36b9cc;
+            --dark: #5a5c69;
+            --light: #f8f9fc;
         }
-    </script>
-    <style type="text/tailwindcss">
-        /* Add custom base styles or components here if absolutely necessary */
-        /* Define perspective utility */
-        .perspective { perspective: 1000px; }
-        /* Define JS-toggled flip state */
-        .flipped .flip-card-inner {
-            transform: rotateY(180deg);
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
         }
-        /* Define JS-toggled visible state for animations */
-        .fade-in-element {
-            @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 100px 0;
         }
-        .is-visible {
-             @apply opacity-100 translate-y-0;
+        
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 100%;
         }
-        /* Define backface utility class (Tailwind doesn't have one built-in easily via CDN) */
-        .backface-hidden {
-             backface-visibility: hidden;
-             -webkit-backface-visibility: hidden;
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-         /* Define 3d transform style utility */
-        .transform-style-3d {
-            transform-style: preserve-3d;
+        
+        .project-image-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background-color: #e9ecef;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-title {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin: 0 10px;
+            transition: color 0.2s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--accent);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 font-sans antialiased overflow-x-hidden">
-
-    <!-- Header -->
-    <header class="fade-in-element bg-gray-800/90 text-gray-100 py-6 px-4 text-center border-b-4 border-blue-500 backdrop-blur-sm sticky top-0 z-10 shadow-md">
-        <h1 class="text-3xl md:text-4xl font-bold mb-1">Activebook Creations</h1>
-        <p class="text-sm md:text-base font-light opacity-90">Hover or tap on a card to explore interactive projects.</p>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto my-10 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-
-            <!-- Project Card: gllm -->
-            <div class="project-card group perspective rounded-lg shadow-md hover:shadow-xl focus-within:shadow-xl transition-shadow duration-300 cursor-pointer fade-in-element min-h-[350px]" tabindex="0" style="--stagger: 1;">
-                <div class="flip-card-inner relative w-full h-full transition-transform duration-700 ease-in-out transform-style-3d group-hover:rotate-y-180 group-focus-within:rotate-y-180">
-                    <!-- Front Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-white flex flex-col shadow-inner">
-                        <img src="https://activebook.github.io/gllm/screenshots/help.png" alt="Preview of gllm project" class="w-full h-3/5 object-cover">
-                        <h3 class="p-4 text-lg font-bold text-blue-800 text-center mt-auto border-t border-gray-200">gllm</h3>
-                    </div>
-                    <!-- Back Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-gray-700 text-gray-100 rotate-y-180 flex flex-col items-center justify-center p-5 text-center">
-                        <h4 class="text-lg font-bold mb-2">gllm</h4>
-                        <p class="text-xs md:text-sm mb-4 flex-grow">A powerful Golang CLI for interacting with various LLMs.</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="gllm/" class="btn-primary py-2 px-4 rounded-full text-xs font-semibold bg-blue-500 text-white hover:bg-blue-700 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">Visit Page</a>
-                            <a href="https://github.com/activebook/gllm" class="btn-secondary py-2 px-4 rounded-full text-xs font-semibold bg-gray-500 text-white hover:bg-gray-600 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">View Code</a>
-                        </div>
-                    </div>
-                </div>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4" data-aos="fade-up">ActiveBook Projects</h1>
+            <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">
+                A collection of powerful tools and applications designed to enhance your digital experience.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/activebook" class="btn btn-light btn-lg me-2">
+                    <i class="fab fa-github me-2"></i>GitHub
+                </a>
             </div>
-
-            <!-- Project Card: clash_forge -->
-            <div class="project-card group perspective rounded-lg shadow-md hover:shadow-xl focus-within:shadow-xl transition-shadow duration-300 cursor-pointer fade-in-element min-h-[350px]" tabindex="0" style="--stagger: 2;">
-                 <div class="flip-card-inner relative w-full h-full transition-transform duration-700 ease-in-out transform-style-3d group-hover:rotate-y-180 group-focus-within:rotate-y-180">
-                    <!-- Front Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-white flex flex-col shadow-inner">
-                        <img src="https://activebook.github.io/clash_forge/screenshots/screen1.jpg" alt="Preview of Clash Forge project" class="w-full h-3/5 object-cover">
-                        <h3 class="p-4 text-lg font-bold text-blue-800 text-center mt-auto border-t border-gray-200">Clash Forge</h3>
-                    </div>
-                    <!-- Back Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-gray-700 text-gray-100 rotate-y-180 flex flex-col items-center justify-center p-5 text-center">
-                        <h4 class="text-lg font-bold mb-2">Clash Forge</h4>
-                        <p class="text-xs md:text-sm mb-4 flex-grow">Manage Clash proxy configs. Converts subscriptions & URLs to YAML.</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="clash_forge/" class="btn-primary py-2 px-4 rounded-full text-xs font-semibold bg-blue-500 text-white hover:bg-blue-700 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">Visit Page</a>
-                            <a href="https://github.com/activebook/clash_forge" class="btn-secondary py-2 px-4 rounded-full text-xs font-semibold bg-gray-500 text-white hover:bg-gray-600 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">View Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card: SakanaVision -->
-            <div class="project-card group perspective rounded-lg shadow-md hover:shadow-xl focus-within:shadow-xl transition-shadow duration-300 cursor-pointer fade-in-element min-h-[350px]" tabindex="0" style="--stagger: 3;">
-                 <div class="flip-card-inner relative w-full h-full transition-transform duration-700 ease-in-out transform-style-3d group-hover:rotate-y-180 group-focus-within:rotate-y-180">
-                    <!-- Front Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-white flex flex-col shadow-inner">
-                        <img src="https://activebook.github.io/SakanaVision/showcases/UI_Light.jpg" alt="Preview of SakanaVision project" class="w-full h-3/5 object-cover">
-                        <h3 class="p-4 text-lg font-bold text-blue-800 text-center mt-auto border-t border-gray-200">SakanaVision</h3>
-                    </div>
-                    <!-- Back Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-gray-700 text-gray-100 rotate-y-180 flex flex-col items-center justify-center p-5 text-center">
-                        <h4 class="text-lg font-bold mb-2">SakanaVision</h4>
-                        <p class="text-xs md:text-sm mb-4 flex-grow">Visual elements/interactions potentially using the Sakana widget concept. (Update desc.)</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="SakanaVision/" class="btn-primary py-2 px-4 rounded-full text-xs font-semibold bg-blue-500 text-white hover:bg-blue-700 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">Visit Page</a>
-                            <a href="https://github.com/activebook/SakanaVision" class="btn-secondary py-2 px-4 rounded-full text-xs font-semibold bg-gray-500 text-white hover:bg-gray-600 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">View Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card: SakanaLens -->
-             <div class="project-card group perspective rounded-lg shadow-md hover:shadow-xl focus-within:shadow-xl transition-shadow duration-300 cursor-pointer fade-in-element min-h-[350px]" tabindex="0" style="--stagger: 4;">
-                 <div class="flip-card-inner relative w-full h-full transition-transform duration-700 ease-in-out transform-style-3d group-hover:rotate-y-180 group-focus-within:rotate-y-180">
-                    <!-- Front Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-white flex flex-col shadow-inner">
-                        <img src="https://activebook.github.io/SakanaLens/showcase/case3.jpg" alt="Preview of SakanaLens project" class="w-full h-3/5 object-cover">
-                        <h3 class="p-4 text-lg font-bold text-blue-800 text-center mt-auto border-t border-gray-200">SakanaLens</h3>
-                    </div>
-                    <!-- Back Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-gray-700 text-gray-100 rotate-y-180 flex flex-col items-center justify-center p-5 text-center">
-                        <h4 class="text-lg font-bold mb-2">SakanaLens</h4>
-                        <p class="text-xs md:text-sm mb-4 flex-grow">Tool related to Sakana widget, maybe analysis or filtering. (Update desc.)</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="SakanaLens/" class="btn-primary py-2 px-4 rounded-full text-xs font-semibold bg-blue-500 text-white hover:bg-blue-700 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">Visit Page</a>
-                            <a href="https://github.com/activebook/SakanaLens" class="btn-secondary py-2 px-4 rounded-full text-xs font-semibold bg-gray-500 text-white hover:bg-gray-600 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">View Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card: KokoroVoice -->
-            <div class="project-card group perspective rounded-lg shadow-md hover:shadow-xl focus-within:shadow-xl transition-shadow duration-300 cursor-pointer fade-in-element min-h-[350px]" tabindex="0" style="--stagger: 5;">
-                <div class="flip-card-inner relative w-full h-full transition-transform duration-700 ease-in-out transform-style-3d group-hover:rotate-y-180 group-focus-within:rotate-y-180">
-                    <!-- Front Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-white flex flex-col shadow-inner">
-                        <img src="images/kokoro_voice-preview.png" alt="Preview of KokoroVoice project" class="w-full h-3/5 object-cover">
-                        <h3 class="p-4 text-lg font-bold text-blue-800 text-center mt-auto border-t border-gray-200">KokoroVoice</h3>
-                    </div>
-                    <!-- Back Face -->
-                    <div class="absolute w-full h-full backface-hidden rounded-lg overflow-hidden bg-gray-700 text-gray-100 rotate-y-180 flex flex-col items-center justify-center p-5 text-center">
-                        <h4 class="text-lg font-bold mb-2">KokoroVoice</h4>
-                        <p class="text-xs md:text-sm mb-4 flex-grow">Likely focused on voice synthesis, recognition, or audio work. (Update desc.)</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="KokoroVoice/" class="btn-primary py-2 px-4 rounded-full text-xs font-semibold bg-blue-500 text-white hover:bg-blue-700 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">Visit Page</a>
-                            <a href="https://github.com/activebook/KokoroVoice" class="btn-secondary py-2 px-4 rounded-full text-xs font-semibold bg-gray-500 text-white hover:bg-gray-600 transition-all hover:-translate-y-0.5 hover:shadow-md" target="_blank" rel="noopener noreferrer">View Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add more project cards here -->
-
         </div>
-    </main>
+    </section>
+
+    <!-- Current Projects Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Projects Undergoing Development</h2>
+            <div class="row g-4">
+                <!-- GLLM Project -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <span class="badge bg-primary project-badge">CLI Tool</span>
+                            <img src="https://via.placeholder.com/500x300/4e73df/ffffff?text=GLLM" alt="GLLM Screenshot" class="project-image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">GLLM</h5>
+                            <p class="card-text">A powerful command-line tool to interact seamlessly with various Large Language Models. Configure API keys, set preferred models, and chat or execute commands effortlessly.</p>
+                            <a href="https://activebook.github.io/gllm/" class="btn btn-outline-primary">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clash Forge Project -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <span class="badge bg-success project-badge">Networking</span>
+                            <img src="https://via.placeholder.com/500x300/36b9cc/ffffff?text=Clash+Forge" alt="Clash Forge Screenshot" class="project-image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">Clash Forge</h5>
+                            <p class="card-text">A user-friendly tool to streamline proxy configurations for Clash. Convert subscriptions and proxy URLs into Clash-compatible YAML files with automated tasks and clear feedback.</p>
+                            <a href="https://activebook.github.io/clash_forge/" class="btn btn-outline-primary">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SakanaVision Project -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <span class="badge bg-info project-badge">Translation</span>
+                            <img src="https://via.placeholder.com/500x300/1cc88a/ffffff?text=SakanaVision" alt="SakanaVision Screenshot" class="project-image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">SakanaVision</h5>
+                            <p class="card-text">Node.js version of the Japanese-to-English translation tool. Translate text in any active window with simple keyboard shortcuts without switching applications.</p>
+                            <a href="https://activebook.github.io/SakanaVision/" class="btn btn-outline-primary">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SakanaLens Project -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <span class="badge bg-info project-badge">Translation</span>
+                            <img src="https://via.placeholder.com/500x300/f6c23e/ffffff?text=SakanaLens" alt="SakanaLens Screenshot" class="project-image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">SakanaLens</h5>
+                            <p class="card-text">Python version of the Japanese-to-English translation tool. Seamlessly translate on-screen text in any window with customizable keyboard shortcuts.</p>
+                            <a href="https://activebook.github.io/SakanaLens/" class="btn btn-outline-primary">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- KokoroVoice Project -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card project-card">
+                        <div class="project-image-container">
+                            <span class="badge bg-warning project-badge">TTS</span>
+                            <img src="https://via.placeholder.com/500x300/e74a3b/ffffff?text=KokoroVoice" alt="KokoroVoice Screenshot" class="project-image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="project-title">KokoroVoice</h5>
+                            <p class="card-text">A lightweight, local Text-to-Speech engine powered by Kokoro TTS. Convert text to natural-sounding speech without token limits or subscription costs.</p>
+                            <a href="https://activebook.github.io/KokoroVoice" class="btn btn-outline-primary">Explore Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="fade-in-element text-center mt-16 py-6 px-4 text-sm text-gray-600 border-t border-gray-300 bg-gray-100/80 backdrop-blur-sm">
-        <p>Visit the <a href="https://github.com/activebook" class="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">Activebook Organization on GitHub</a> for more.</p>
-        <p class="mt-1">&copy; 2024 Activebook</p>
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="mb-3">
+                <a href="https://github.com/activebook" class="social-icon"><i class="fab fa-github"></i></a>
+                <!-- Add more social links as needed -->
+            </div>
+            <p class="mb-0">© 2023 ActiveBook Projects. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Interaction Script -->
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Alpine.js -->
+    <script src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- Intersection Observer for Fade-in Elements ---
-            const observerOptions = {
-                root: null, // relative to document viewport
-                rootMargin: '0px',
-                threshold: 0.1 // trigger when 10% of the element is visible
-            };
-
-            const observerCallback = (entries, observer) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-                        // Apply stagger based on inline style or data attribute
-                        const stagger = parseInt(element.style.getPropertyValue('--stagger') || '0', 10);
-                        setTimeout(() => {
-                             element.classList.add('is-visible');
-                        }, stagger * 100); // 100ms delay per stagger index
-
-                        observer.unobserve(element); // Stop observing once visible
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-            const elementsToFade = document.querySelectorAll('.fade-in-element');
-            elementsToFade.forEach(el => observer.observe(el));
-
-
-            // --- Flip Card on Click/Tap/Keypress ---
-            const cards = document.querySelectorAll('.project-card');
-
-            cards.forEach(card => {
-                const flipInner = card.querySelector('.flip-card-inner');
-
-                // Click/Tap listener
-                card.addEventListener('click', (e) => {
-                    // Prevent links inside from triggering flip if clicked directly
-                    if (e.target.closest('a')) {
-                        return;
-                    }
-                     // Use the JS class toggle defined in <style>
-                    card.classList.toggle('flipped');
-                });
-
-                // Keyboard listener (Enter/Space)
-                card.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault(); // Prevent scrolling with Space
-                        card.classList.toggle('flipped');
-                    }
-                });
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
             });
         });
     </script>
-
 </body>
 </html>
