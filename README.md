@@ -10,14 +10,16 @@ New worlds to explore
 - 1, [gllm](https://activebook.github.io/gllm/)
 - 2, [clash_forge](https://activebook.github.io/clash_forge/)
 - 3, [SakanaVision](https://activebook.github.io/SakanaVision/)
-- 4, [SakanaLens](https://activebook.github.io/SakanaLens/)
-- 5, [KokoroVoice](https://activebook.github.io/KokoroVoice)
+- 4, [Speechie](https://activebook.github.io/speechie/)
+- 5, [SakanaLens](https://activebook.github.io/SakanaLens/)
+- 6, [KokoroVoice](https://activebook.github.io/KokoroVoice)
 
 ## Languages for each project
 
 - [gllm] - Golang
 - [clash_forge] - Dart
 - [SakanaVision] - Javascript
+- [Speechie] - Javascript
 - [SakanaLens] - Python
 - [KokoroVoice] - Typescript
 
@@ -31,6 +33,9 @@ Clash Forge is a powerful and user-friendly tool designed to streamline the mana
 
 - SakanaVision Automatic Japanese-to-English Translation Node version
 SakanaVision enables seamless translation of Japanese text to English in any active window. With a simple Ctrl + T shortcut for full-window translation, Ctrl + Cmd + T to select a specific area, or Ctrl + Cmd + R to lock a region for future translations (then using Ctrl + T to translate only that region), you can translate on-screen text without switching applications.
+
+- speechie
+A lightweight chrome extension that makes tts easy. Select text on the web and press Alt+T to trigger text-to-speech.
 
 - SakanaLens Automatic Japanese-to-English Translation Python version
 SakanaLens enables seamless translation of Japanese text to English in any active window. With a simple Ctrl + T shortcut for full-window translation, Ctrl + Cmd + T to select a specific area, or Ctrl + Cmd + R to lock a region for future translations (then using Ctrl + T to translate only that region), you can translate on-screen text without switching applications.
