@@ -8,15 +8,17 @@ New worlds to explore
 ## Projects undergoing
 
 - 1, [gllm](https://activebook.github.io/gllm/)
-- 2, [clash_forge](https://activebook.github.io/clash_forge/)
-- 3, [SakanaVision](https://activebook.github.io/SakanaVision/)
-- 4, [Speechie](https://activebook.github.io/speechie/)
-- 5, [SakanaLens](https://activebook.github.io/SakanaLens/)
-- 6, [KokoroVoice](https://activebook.github.io/KokoroVoice)
+- 2, [copilot_sidebar](https://activebook.github.io/copilot_sidebar/)
+- 3, [clash_forge](https://activebook.github.io/clash_forge/)
+- 4, [SakanaVision](https://activebook.github.io/SakanaVision/)
+- 5, [Speechie](https://activebook.github.io/speechie/)
+- 6, [SakanaLens](https://activebook.github.io/SakanaLens/)
+- 7, [KokoroVoice](https://activebook.github.io/KokoroVoice)
 
 ## Languages for each project
 
 - [gllm] - Golang
+- [copilot_sidebar] - Javascript
 - [clash_forge] - Dart
 - [SakanaVision] - Javascript
 - [Speechie] - Javascript
@@ -27,6 +29,9 @@ New worlds to explore
 
 - gllm
 gllm is a powerful command-line tool designed to interact seamlessly with various Large Language Models (LLMs). Configure your API keys, set your preferred models, and start chatting or executing commands effortlessly.
+
+- Copilot Sidebar
+A Chrome extension that enhances your productivity by allowing you to extract web content and build custom prompts for AI models, all from a convenient sidebar.
 
 - Clash Forge
 Clash Forge is a powerful and user-friendly tool designed to streamline the management of proxy configurations for [Clash], a popular rule-based proxy client. Whether you have Clash subscriptions or individual proxy URLs, Clash Forge converts them into Clash-compatible YAML configuration files with ease. It automates tedious tasks, resolves DNS blocks, and provides clear feedback, making proxy setup a breeze.
