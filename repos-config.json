@@ -1,11 +1,11 @@
 {
   "featuredRepos": [
-    "gllm",
-    "copilot_sidebar",
-    "clash_forge",
-    "SakanaVision",
-    "speechie",
-    "SakanaLens",
-    "KokoroVoice"
+    { "name": "gllm", "type": "CLI Tool" },
+    { "name": "copilot_sidebar", "type": "Chrome Extension" },
+    { "name": "clash_forge", "type": "Networking" },
+    { "name": "SakanaVision", "type": "Translation" },
+    { "name": "speechie", "type": "Chrome Extension" },
+    { "name": "SakanaLens", "type": "Translation" },
+    { "name": "KokoroVoice", "type": "TTS Engine" }
   ]
 }

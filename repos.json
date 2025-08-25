@@ -5,7 +5,8 @@
     "html_url": "https://github.com/activebook/gllm",
     "stargazers_count": 2,
     "forks_count": 0,
-    "language": "Go"
+    "language": "Go",
+    "type": "CLI Tool"
   },
   {
     "name": "copilot_sidebar",
@@ -13,7 +14,8 @@
     "html_url": "https://github.com/activebook/copilot_sidebar",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "JavaScript"
+    "language": "JavaScript",
+    "type": "Chrome Extension"
   },
   {
     "name": "clash_forge",
@@ -21,7 +23,8 @@
     "html_url": "https://github.com/activebook/clash_forge",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "Dart"
+    "language": "Dart",
+    "type": "Networking"
   },
   {
     "name": "SakanaVision",
@@ -29,7 +32,8 @@
     "html_url": "https://github.com/activebook/SakanaVision",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "JavaScript"
+    "language": "JavaScript",
+    "type": "Translation"
   },
   {
     "name": "speechie",
@@ -37,7 +41,8 @@
     "html_url": "https://github.com/activebook/speechie",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "JavaScript"
+    "language": "JavaScript",
+    "type": "Chrome Extension"
   },
   {
     "name": "SakanaLens",
@@ -45,7 +50,8 @@
     "html_url": "https://github.com/activebook/SakanaLens",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "Python"
+    "language": "Python",
+    "type": "Translation"
   },
   {
     "name": "KokoroVoice",
@@ -53,6 +59,7 @@
     "html_url": "https://github.com/activebook/KokoroVoice",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "TypeScript"
+    "language": "TypeScript",
+    "type": "TTS Engine"
   }
 ]

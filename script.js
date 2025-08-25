@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="card project-card">
                             <div class="project-image-container">
                                 ${getLanguageBadge(repo.language)}
-                                <span class="badge bg-primary project-badge">Project</span>
+                                <span class="badge bg-primary project-badge">${repo.type || 'Project'}</span>
                                 <img src="./images/${repo.name}.jpg" alt="${repo.name} Screenshot" class="project-image" onerror="this.onerror=null;this.src='./images/icon.png';">
                             </div>
                             <div class="card-body">

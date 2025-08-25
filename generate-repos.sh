@@ -25,7 +25,7 @@ fi
 # 2. Check for GitHub Token
 # Source .env file if it exists
 if [ -f ".env" ]; then
-    echo "Sourcing .env file..."
+    echo "Sourcing .env file..." >&2
     set -o allexport
     source ./.env
     set +o allexport
@@ -33,33 +33,28 @@ fi
 
 if [ -z "$GITHUB_TOKEN" ]; then
     echo "Error: GITHUB_TOKEN environment variable is not set." >&2
-    echo "Usage: GITHUB_TOKEN=your_token_here ./generate-repos.sh" >&2
+    echo "Please create a .env file or run as: GITHUB_TOKEN=your_token_here ./generate-repos.sh" >&2
     exit 1
 fi
 
-# 3. Read repo names from config file
-repo_names=$(jq -r '.featuredRepos[]' "$CONFIG_FILE")
-
-if [ -z "$repo_names" ]; then
-    echo "No repositories found in $CONFIG_FILE" >&2
-    exit 1
-fi
-
-# 4. Fetch data for each repo and build a JSON array
-json_array="[]"
-echo "Fetching repository data..."
-
-for repo_name in $repo_names; do
-    echo " - Fetching $repo_name..."
+# 3. Process the repositories
+# This function processes each repo and outputs a stream of JSON objects.
+process_repos() {
+  jq -r '.featuredRepos[] | "\(.name)\t\(.type)"' "$CONFIG_FILE" | while IFS=$'\t' read -r repo_name repo_type;
+  do
+    echo " - Fetching $repo_name..." >&2
     api_url="https://api.github.com/repos/$GITHUB_USERNAME/$repo_name"
 
-    # Fetch data and select/rename fields with jq
-    repo_json=$(curl -s -H "Authorization: token $GITHUB_TOKEN" -H "User-Agent: activebook-portfolio-generator" "$api_url" | \
-    jq -c '{name, description, html_url, stargazers_count, forks_count, language}')
+    # Fetch data, add the type, and output one compact JSON object.
+    curl -s -H "Authorization: token $GITHUB_TOKEN" -H "User-Agent: activebook-portfolio-generator" "$api_url" | \
+    jq -c --arg type "$repo_type" '{name, description, html_url, stargazers_count, forks_count, language, type: $type}'
+  done
+}
 
-    # Add the resulting JSON object to our array
-    json_array=$(echo "$json_array" | jq --argjson item "$repo_json" '. + [$item]')
-done
+# 4. Fetch data and write to file
+echo "Fetching repository data..." >&2
+# We call the function and pipe its output stream to jq, which slurps it into an array.
+json_array=$(process_repos | jq -s '.')
 
 # 5. Write the final, pretty-printed JSON to the output file
 echo "$json_array" | jq '.' > "$OUTPUT_FILE"
