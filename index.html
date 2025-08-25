@@ -149,6 +149,53 @@
         .social-icon:hover {
             color: var(--accent);
         }
+
+        /* Skeleton Loader Styles */
+        .skeleton-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skeleton {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            animation: shimmer 1.5s infinite linear;
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+        }
+
+        .skeleton-image {
+            height: 170px;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .skeleton-title {
+            height: 1.25rem;
+            width: 60%;
+            margin-bottom: 0.75rem;
+        }
+
+        .skeleton-text {
+            height: 0.875rem;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .skeleton-text-short {
+            width: 75%;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -174,7 +221,31 @@
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Projects Undergoing Development</h2>
             <div id="project-list-container" class="row g-4">
-                
+                <!-- Skeleton Loader -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-image"></div>
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text skeleton-text-short"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-none d-md-block">
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-image"></div>
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text skeleton-text-short"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-none d-lg-block">
+                    <div class="skeleton-card">
+                        <div class="skeleton skeleton-image"></div>
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text skeleton-text-short"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
