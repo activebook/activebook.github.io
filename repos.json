@@ -1,0 +1,58 @@
+[
+  {
+    "name": "gllm",
+    "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, and extensive customization.",
+    "html_url": "https://github.com/activebook/gllm",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "language": "Go"
+  },
+  {
+    "name": "copilot_sidebar",
+    "description": "A Chrome extension that enhances your productivity by allowing you to extract web content and build custom prompts for AI models, all from a convenient sidebar.",
+    "html_url": "https://github.com/activebook/copilot_sidebar",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript"
+  },
+  {
+    "name": "clash_forge",
+    "description": "A user-friendly multi-batch tool to streamline proxy configurations for Clash. Convert subscriptions and proxy URLs into Clash-compatible YAML files with automated tasks and clear feedback. Supports vless, vmess, trojan and ss protocols.",
+    "html_url": "https://github.com/activebook/clash_forge",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Dart"
+  },
+  {
+    "name": "SakanaVision",
+    "description": "Sakana Vision - 日本語の自動翻訳ツール a Node version of the Japanese-to-English translation tool. Translate text in any active window with simple keyboard shortcuts without switching applications. Supports customizable prompts to fit to any translation task and text extraction.",
+    "html_url": "https://github.com/activebook/SakanaVision",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript"
+  },
+  {
+    "name": "speechie",
+    "description": "A lightweight chrome extension that makes tts easy. Select text on the web and press Alt+T to trigger text-to-speech.",
+    "html_url": "https://github.com/activebook/speechie",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript"
+  },
+  {
+    "name": "SakanaLens",
+    "description": "Sakana Lens 日本語の自動翻訳ツール a Python version of the Japanese-to-English translation tool. Seamlessly translate on-screen text in any window with customizable keyboard shortcuts.",
+    "html_url": "https://github.com/activebook/SakanaLens",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Python"
+  },
+  {
+    "name": "KokoroVoice",
+    "description": "A lightweight, local Text-to-Speech engine powered by Kokoro TTS. Convert text to natural-sounding speech without token limits or subscription costs.",
+    "html_url": "https://github.com/activebook/KokoroVoice",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript"
+  }
+]
