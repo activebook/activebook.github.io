@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="project-image-container">
                                 ${getLanguageBadge(repo.language)}
                                 <span class="badge bg-primary project-badge">Project</span>
-                                <img src="https://raw.githubusercontent.com/activebook/${repo.name}/main/images/screenshot.png" alt="${repo.name} Screenshot" class="project-image" onerror="this.onerror=null;this.src='./images/icon.png';">
+                                <img src="./images/${repo.name}.jpg" alt="${repo.name} Screenshot" class="project-image" onerror="this.onerror=null;this.src='./images/icon.png';">
                             </div>
                             <div class="card-body">
                                 <h5 class="project-title">${repo.name}</h5>
