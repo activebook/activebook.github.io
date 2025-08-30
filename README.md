@@ -45,5 +45,8 @@ A lightweight chrome extension that makes tts easy. Select text on the web and p
 - SakanaLens Automatic Japanese-to-English Translation Python version
 SakanaLens enables seamless translation of Japanese text to English in any active window. With a simple Ctrl + T shortcut for full-window translation, Ctrl + Cmd + T to select a specific area, or Ctrl + Cmd + R to lock a region for future translations (then using Ctrl + T to translate only that region), you can translate on-screen text without switching applications.
 
+- GVoice
+GVoice is a lightweight, desktop Text-to-Speech (TTS) application powered by Google AI's Gemini TTS API. Convert your text to natural-sounding speech effortlessly with support for multiple voices, dark/light themes, and customizable speech styles.
+
 - KokoroVoice
 A lightweight, local Text-to-Speech (TTS) engine powered by Kokoro TTS. Convert your text to natural-sounding speech effortlessly—completely free and without the hassle of token limits or subscription worries.

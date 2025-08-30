@@ -55,7 +55,7 @@
   },
   {
     "name": "GVoice",
-    "description": "A lightweight, Text-to-Speech app powered by Gemini TTS that converts text to natural-sounding speech with customization.",
+    "description": "A lightweight, desktop Text-to-Speech (TTS) application powered by Google AI's Gemini TTS API. Convert your text to natural-sounding speech effortlessly with support for multiple voices choice,  and customizable speech styles.",
     "html_url": "https://github.com/activebook/GVoice",
     "stargazers_count": 1,
     "forks_count": 0,
@@ -68,7 +68,7 @@
     "html_url": "https://github.com/activebook/KokoroVoice",
     "stargazers_count": 1,
     "forks_count": 1,
-    "language": "JavaScript",
+    "language": "CSS",
     "type": "TTS Engine"
   }
 ]
