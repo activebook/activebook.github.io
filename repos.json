@@ -32,7 +32,7 @@
     "html_url": "https://github.com/activebook/SakanaVision",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "JavaScript",
+    "language": "CSS",
     "type": "Translation"
   },
   {
@@ -54,12 +54,21 @@
     "type": "Translation"
   },
   {
+    "name": "GVoice",
+    "description": "A lightweight, Text-to-Speech app powered by Gemini TTS that converts text to natural-sounding speech with customization.",
+    "html_url": "https://github.com/activebook/GVoice",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript",
+    "type": "TTS"
+  },
+  {
     "name": "KokoroVoice",
     "description": "A lightweight, local Text-to-Speech engine powered by Kokoro TTS. Convert text to natural-sounding speech without token limits or subscription costs.",
     "html_url": "https://github.com/activebook/KokoroVoice",
     "stargazers_count": 1,
-    "forks_count": 0,
-    "language": "TypeScript",
+    "forks_count": 1,
+    "language": "JavaScript",
     "type": "TTS Engine"
   }
 ]

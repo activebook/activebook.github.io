@@ -6,6 +6,7 @@
     { "name": "SakanaVision", "type": "Translation" },
     { "name": "speechie", "type": "Chrome Extension" },
     { "name": "SakanaLens", "type": "Translation" },
+    { "name": "GVoice", "type": "TTS" },
     { "name": "KokoroVoice", "type": "TTS Engine" }
   ]
 }
