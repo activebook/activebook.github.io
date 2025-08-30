@@ -45,9 +45,19 @@ process_repos() {
     echo " - Fetching $repo_name..." >&2
     api_url="https://api.github.com/repos/$GITHUB_USERNAME/$repo_name"
 
-    # Fetch data, add the type, and output one compact JSON object.
-    curl -s -H "Authorization: token $GITHUB_TOKEN" -H "User-Agent: activebook-portfolio-generator" "$api_url" | \
-    jq -c --arg type "$repo_type" '{name, description, html_url, stargazers_count, forks_count, language, type: $type}'
+    # Fetch data and check HTTP status code
+    temp_file="temp_$repo_name.json"
+    http_code=$(curl -s -w "%{http_code}" -o "$temp_file" -H "Authorization: token $GITHUB_TOKEN" -H "User-Agent: activebook-portfolio-generator" "$api_url")
+
+    if [ "$http_code" -ne 200 ]; then
+      echo "Error: Failed to fetch $repo_name (HTTP $http_code)" >&2
+      rm -f "$temp_file"
+      continue
+    fi
+
+    # Process the JSON body and add the type
+    cat "$temp_file" | jq -c --arg type "$repo_type" '{name, description, html_url, stargazers_count, forks_count, language, type: $type}'
+    rm -f "$temp_file"
   done
 }
 
@@ -59,4 +69,4 @@ json_array=$(process_repos | jq -s '.')
 # 5. Write the final, pretty-printed JSON to the output file
 echo "$json_array" | jq '.' > "$OUTPUT_FILE"
 
-echo "\nSuccessfully generated $OUTPUT_FILE!"
+echo "Successfully generated $OUTPUT_FILE!"

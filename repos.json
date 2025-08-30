@@ -32,7 +32,7 @@
     "html_url": "https://github.com/activebook/SakanaVision",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "CSS",
+    "language": "JavaScript",
     "type": "Translation"
   },
   {
@@ -68,7 +68,7 @@
     "html_url": "https://github.com/activebook/KokoroVoice",
     "stargazers_count": 1,
     "forks_count": 1,
-    "language": "CSS",
+    "language": "JavaScript",
     "type": "TTS Engine"
   }
 ]
