@@ -1,7 +1,7 @@
 [
   {
     "name": "gllm",
-    "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, and extensive customization.",
+    "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.",
     "html_url": "https://github.com/activebook/gllm",
     "stargazers_count": 2,
     "forks_count": 0,
@@ -9,9 +9,27 @@
     "type": "CLI Tool"
   },
   {
+    "name": "tts-mcp-server",
+    "description": "A Model Context Protocol (MCP) server that provides Text-to-Speech (TTS) functionality using Google TTS API.",
+    "html_url": "https://github.com/activebook/tts-mcp-server",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript",
+    "type": "MCP Server"
+  },
+  {
     "name": "copilot_sidebar",
     "description": "A Chrome extension that enhances your productivity by allowing you to extract web content and build custom prompts for AI models, all from a convenient sidebar.",
     "html_url": "https://github.com/activebook/copilot_sidebar",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript",
+    "type": "Chrome Extension"
+  },
+  {
+    "name": "speechie",
+    "description": "A lightweight chrome extension that makes tts easy. Select text on the web and press Alt+T to trigger text-to-speech.",
+    "html_url": "https://github.com/activebook/speechie",
     "stargazers_count": 1,
     "forks_count": 0,
     "language": "JavaScript",
@@ -34,15 +52,6 @@
     "forks_count": 0,
     "language": "JavaScript",
     "type": "Translation"
-  },
-  {
-    "name": "speechie",
-    "description": "A lightweight chrome extension that makes tts easy. Select text on the web and press Alt+T to trigger text-to-speech.",
-    "html_url": "https://github.com/activebook/speechie",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "language": "JavaScript",
-    "type": "Chrome Extension"
   },
   {
     "name": "SakanaLens",

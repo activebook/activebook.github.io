@@ -1,11 +1,12 @@
 {
   "featuredRepos": [
     { "name": "gllm", "type": "CLI Tool" },
+    { "name": "tts-mcp-server", "type": "MCP Server" },
     { "name": "copilot_sidebar", "type": "Chrome Extension" },
-    { "name": "clash_forge", "type": "Networking" },
-    { "name": "SakanaVision", "type": "Translation" },
     { "name": "speechie", "type": "Chrome Extension" },
-    { "name": "SakanaLens", "type": "Translation" },
+    { "name": "clash_forge", "type": "Networking" },
+    { "name": "SakanaVision", "type": "Translation" },    
+    { "name": "SakanaLens", "type": "Translation" },    
     { "name": "GVoice", "type": "TTS" },
     { "name": "KokoroVoice", "type": "TTS Engine" }
   ]
