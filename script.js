@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true
     });
 
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
     const projectContainer = document.getElementById('project-list-container');
     const localReposUrl = './repos.json';
 
