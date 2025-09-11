@@ -1,5 +1,14 @@
 [
   {
+    "name": "EverEtch",
+    "description": "EverEtch is a slim and smart app that helps you learn and remember words with the power of AI, no ads, offline, and free of charge.",
+    "html_url": "https://github.com/activebook/EverEtch",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript",
+    "type": "Learning"
+  },
+  {
     "name": "gllm",
     "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.",
     "html_url": "https://github.com/activebook/gllm",
@@ -14,7 +23,7 @@
     "html_url": "https://github.com/activebook/tts-mcp-server",
     "stargazers_count": 1,
     "forks_count": 0,
-    "language": "TypeScript",
+    "language": "JavaScript",
     "type": "MCP Server"
   },
   {
@@ -75,7 +84,7 @@
     "name": "KokoroVoice",
     "description": "A lightweight, local Text-to-Speech engine powered by Kokoro TTS. Convert text to natural-sounding speech without token limits or subscription costs.",
     "html_url": "https://github.com/activebook/KokoroVoice",
-    "stargazers_count": 1,
+    "stargazers_count": 2,
     "forks_count": 1,
     "language": "JavaScript",
     "type": "TTS Engine"

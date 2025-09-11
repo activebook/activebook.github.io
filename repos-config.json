@@ -1,5 +1,6 @@
 {
   "featuredRepos": [
+    { "name": "EverEtch", "type": "Learning" },
     { "name": "gllm", "type": "CLI Tool" },
     { "name": "tts-mcp-server", "type": "MCP Server" },
     { "name": "copilot_sidebar", "type": "Chrome Extension" },
