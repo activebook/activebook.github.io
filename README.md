@@ -22,6 +22,7 @@ New worlds to explore
 
 - [EverEtch] - TypeScript
 - [gllm] - Go
+- [atom-updater] - Go & TypeScript
 - [tts-mcp-server] - JavaScript
 - [copilot_sidebar] - JavaScript
 - [speechie] - JavaScript
@@ -38,6 +39,9 @@ EverEtch is a slim and smart app that helps you learn and remember words with th
 
 - gllm
 gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.
+
+- atom-updater
+atom-updater is a robust, cross-platform Go application designed to safely update other applications that cannot update themselves while running. It provides atomic file replacement with rollback capabilities, ensuring safe and reliable application updates.
 
 - tts-mcp-server
 A Model Context Protocol (MCP) server that provides Text-to-Speech (TTS) functionality using Google TTS API.

@@ -18,6 +18,15 @@
     "type": "CLI Tool"
   },
   {
+    "name": "atom-updater",
+    "description": "atom-updater is a robust, cross-platform Go application designed to safely update other applications that cannot update themselves while running. It provides atomic file replacement with rollback capabilities, ensuring safe and reliable application updates.",
+    "html_url": "https://github.com/activebook/atom-updater",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Go",
+    "type": "NPM Package"
+  },
+  {
     "name": "tts-mcp-server",
     "description": "A Model Context Protocol (MCP) server that provides Text-to-Speech (TTS) functionality using Google TTS API.",
     "html_url": "https://github.com/activebook/tts-mcp-server",

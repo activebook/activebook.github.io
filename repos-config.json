@@ -2,6 +2,7 @@
   "featuredRepos": [
     { "name": "EverEtch", "type": "Learning" },
     { "name": "gllm", "type": "CLI Tool" },
+    { "name": "atom-updater", "type": "NPM Package" },
     { "name": "tts-mcp-server", "type": "MCP Server" },
     { "name": "copilot_sidebar", "type": "Chrome Extension" },
     { "name": "speechie", "type": "Chrome Extension" },
