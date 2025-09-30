@@ -167,14 +167,144 @@ footer a:hover {
    ENHANCED BADGE SYSTEM STYLES
    ============================================ */
 
-/* CSS Variables for Badge Colors */
+/* CSS Variables for Light/Dark Themes */
 :root {
+    /* Light Theme (Default) */
     --primary: #4e73df;
     --secondary: #f8f9fc;
     --accent: #36b9cc;
     --dark: #5a5c69;
     --light: #f8f9fc;
 
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fc;
+    --bg-hero: linear-gradient(135deg, #4e73df 0%, #36b9cc 100%);
+    --bg-footer: #5a5c69;
+
+    /* Text Colors */
+    --text-primary: #5a5c69;
+    --text-secondary: #6c757d;
+    --text-on-primary: #ffffff;
+
+    /* Border Colors */
+    --border-light: #dee2e6;
+    --border-medium: #ced4da;
+
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Theme - Deep Navy/Slate Palette */
+[data-theme="dark"] {
+    /* Sophisticated Dark Theme Colors */
+    --primary: #6bb6ff; /* Bright blue primary */
+    --secondary: #1e2a3a; /* Deep navy secondary */
+    --accent: #8ab4f8; /* Light blue accent */
+    --dark: #0f1419; /* Deep dark navy */
+    --light: #2d3b4f; /* Medium slate */
+
+    /* Background Colors - Sophisticated Dark Tones */
+    --bg-primary: #3d4f63; /* Lighter card backgrounds for readability */
+    --bg-secondary: #1e2a3a; /* Main background - deep navy */
+    --bg-hero: linear-gradient(135deg, #2d3b4f 0%, #1e2a3a 100%); /* Softer navy gradient */
+    --bg-footer: #0f1419; /* Footer - deepest navy */
+
+    /* Text Colors - Enhanced Readability */
+    --text-primary: #f0f8ff; /* Brighter white text */
+    --text-secondary: #b8d4e8; /* Lighter blue-grey for secondary text */
+    --text-on-primary: #ffffff;
+
+    /* Border Colors - Lighter for Better Contrast */
+    --border-light: #4a5e73; /* Lighter navy borders */
+    --border-medium: #3d4f63; /* Medium borders matching cards */
+
+    /* Shadow Colors - Navy Tinted */
+    --shadow-light: rgba(30, 42, 58, 0.3);
+    --shadow-medium: rgba(15, 20, 25, 0.4);
+}
+
+/* Dark Theme Body Styles */
+[data-theme="dark"] body {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dark Theme Project Cards */
+[data-theme="dark"] .project-card {
+    background-color: var(--bg-primary);
+    border-color: var(--border-light);
+    box-shadow: 0 4px 6px var(--shadow-light);
+}
+
+[data-theme="dark"] .project-card:hover {
+    box-shadow: 0 10px 20px var(--shadow-medium);
+}
+
+/* Dark Theme Project Titles */
+[data-theme="dark"] .project-title {
+    color: #ffd700; /* Golden yellow for dark backgrounds */
+}
+
+/* Dark Theme Card Text - Make Much Lighter */
+[data-theme="dark"] .card-text {
+    color: #ffffff !important; /* Force bright white text */
+    font-weight: 400;
+}
+
+/* Dark Theme Card Body Text */
+[data-theme="dark"] .card-body p {
+    color: #ffffff !important; /* Bright white for descriptions */
+}
+
+/* Dark Theme Footer */
+[data-theme="dark"] footer {
+    background-color: var(--bg-footer);
+    color: var(--text-primary);
+    border-top-color: var(--border-light);
+}
+
+/* Dark Theme Social Icons */
+[data-theme="dark"] .social-icon {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .social-icon:hover {
+    color: var(--accent);
+}
+
+/* Dark Theme Hero Section */
+[data-theme="dark"] .hero-section {
+    background: var(--bg-hero);
+}
+
+/* Dark Theme Buttons - Even Lighter Colors */
+[data-theme="dark"] .btn-outline-primary {
+    border-color: #b8d4ff; /* Even lighter blue border */
+    color: #d4e8ff; /* Very light blue text */
+}
+
+[data-theme="dark"] .btn-outline-primary:hover {
+    background-color: #a8c8ff; /* Even lighter blue background */
+    border-color: #b8d4ff; /* Even lighter blue border */
+    color: #1e2a3a; /* Dark navy text for contrast */
+}
+
+/* Dark Theme Skeleton Loader */
+[data-theme="dark"] .skeleton-card {
+    background-color: var(--bg-primary);
+    box-shadow: 0 4px 6px var(--shadow-light);
+}
+
+/* Theme Transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Badge Color Variables */
+:root {
     /* Enhanced Language Badge Colors */
     --lang-typescript: #3178C6;
     --lang-javascript: #F1E05A;
