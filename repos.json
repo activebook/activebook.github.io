@@ -9,6 +9,15 @@
     "type": "Learning"
   },
   {
+    "name": "media_downloader",
+    "description": "A Chrome extension that automatically detects video and audio media on web pages and provides an easy way to download them.",
+    "html_url": "https://github.com/activebook/media_downloader",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript",
+    "type": "Chrome Extension"
+  },
+  {
     "name": "gllm",
     "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.",
     "html_url": "https://github.com/activebook/gllm",
