@@ -1,5 +1,14 @@
 [
   {
+    "name": "unlock-wechat",
+    "description": "This tool allows you to run multiple instances of WeChat (Weixin) simultaneously by bypassing its single-instance restriction.",
+    "html_url": "https://github.com/activebook/unlock-wechat",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "C",
+    "type": "Native Tool"
+  },
+  {
     "name": "EverEtch",
     "description": "EverEtch is a slim and smart app that helps you learn and remember words with the power of AI, no ads, offline, and free of charge.",
     "html_url": "https://github.com/activebook/EverEtch",

@@ -1,5 +1,6 @@
 {
   "featuredRepos": [
+    { "name": "unlock-wechat", "type": "Native Tool" },
     { "name": "EverEtch", "type": "Learning" },
     { "name": "media_downloader", "type": "Chrome Extension" },
     { "name": "gllm", "type": "CLI Tool" },
