@@ -1,17 +1,60 @@
 {
   "featuredRepos": [
-    { "name": "unlock-wechat", "type": "Native Tool" },
-    { "name": "EverEtch", "type": "Learning" },
-    { "name": "media_downloader", "type": "Chrome Extension" },
-    { "name": "gllm", "type": "CLI Tool" },
-    { "name": "atom-updater", "type": "NPM Package" },
-    { "name": "tts-mcp-server", "type": "MCP Server" },
-    { "name": "copilot_sidebar", "type": "Chrome Extension" },
-    { "name": "speechie", "type": "Chrome Extension" },
-    { "name": "clash_forge", "type": "Networking" },
-    { "name": "SakanaVision", "type": "Translation" },    
-    { "name": "SakanaLens", "type": "Translation" },    
-    { "name": "GVoice", "type": "TTS" },
-    { "name": "KokoroVoice", "type": "TTS Engine" }
+    {
+      "name": "gllm",
+      "type": "CLI Tool"
+    },
+    {
+      "name": "auto-wechat",
+      "type": "CV Automation"
+    },
+    {
+      "name": "unlock-wechat",
+      "type": "Native Tool"
+    },
+    {
+      "name": "EverEtch",
+      "type": "Learning"
+    },
+    {
+      "name": "media_downloader",
+      "type": "Chrome Extension"
+    },
+    {
+      "name": "atom-updater",
+      "type": "NPM Package"
+    },
+    {
+      "name": "tts-mcp-server",
+      "type": "MCP Server"
+    },
+    {
+      "name": "copilot_sidebar",
+      "type": "Chrome Extension"
+    },
+    {
+      "name": "speechie",
+      "type": "Chrome Extension"
+    },
+    {
+      "name": "clash_forge",
+      "type": "Networking"
+    },
+    {
+      "name": "SakanaVision",
+      "type": "Translation"
+    },
+    {
+      "name": "SakanaLens",
+      "type": "Translation"
+    },
+    {
+      "name": "GVoice",
+      "type": "TTS"
+    },
+    {
+      "name": "KokoroVoice",
+      "type": "TTS Engine"
+    }
   ]
 }

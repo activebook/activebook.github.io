@@ -1,5 +1,23 @@
 [
   {
+    "name": "gllm",
+    "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.",
+    "html_url": "https://github.com/activebook/gllm",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "language": "Go",
+    "type": "CLI Tool"
+  },
+  {
+    "name": "auto-wechat",
+    "description": "An automation tool that bulk-sends messages to every contact in WeChat's contact list using clipboard content. It uses computer-vision to locate UI elements and to drive the mouse and keyboard — no WeChat API or plugin required.",
+    "html_url": "https://github.com/activebook/auto-wechat",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Go",
+    "type": "CV Automation"
+  },
+  {
     "name": "unlock-wechat",
     "description": "This tool allows you to run multiple instances of WeChat (Weixin) simultaneously by bypassing its single-instance restriction.",
     "html_url": "https://github.com/activebook/unlock-wechat",
@@ -27,15 +45,6 @@
     "type": "Chrome Extension"
   },
   {
-    "name": "gllm",
-    "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.",
-    "html_url": "https://github.com/activebook/gllm",
-    "stargazers_count": 2,
-    "forks_count": 0,
-    "language": "Go",
-    "type": "CLI Tool"
-  },
-  {
     "name": "atom-updater",
     "description": "atom-updater is a robust, cross-platform Go application designed to safely update other applications that cannot update themselves while running. It provides atomic file replacement with rollback capabilities, ensuring safe and reliable application updates.",
     "html_url": "https://github.com/activebook/atom-updater",
@@ -57,7 +66,7 @@
     "name": "copilot_sidebar",
     "description": "A Chrome extension that enhances your productivity by allowing you to extract web content and build custom prompts for AI models, all from a convenient sidebar.",
     "html_url": "https://github.com/activebook/copilot_sidebar",
-    "stargazers_count": 1,
+    "stargazers_count": 2,
     "forks_count": 0,
     "language": "JavaScript",
     "type": "Chrome Extension"
@@ -75,7 +84,7 @@
     "name": "clash_forge",
     "description": "A user-friendly multi-batch tool to streamline proxy configurations for Clash. Convert subscriptions and proxy URLs into Clash-compatible YAML files with automated tasks and clear feedback. Supports vless, vmess, trojan and ss protocols.",
     "html_url": "https://github.com/activebook/clash_forge",
-    "stargazers_count": 1,
+    "stargazers_count": 2,
     "forks_count": 0,
     "language": "Dart",
     "type": "Networking"
