@@ -48,6 +48,16 @@
     --shadow-md: 0 16px 32px rgba(0, 0, 0, 0.4);
 }
 
+/* Explicit body background for Dark Theme */
+[data-theme="dark"] body {
+    /* 
+       Swap the sharp diagonal split for dark mode:
+       Top-left is dark theme backgroud, bottom-right is #F8A84A
+    */
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-main) 50%, #F8A84A 50%, #F8A84A 100%);
+    background-attachment: fixed;
+}
+
 /* Base Reset & Transitions */
 * {
     box-sizing: border-box;
@@ -59,7 +69,16 @@
 
 body {
     font-family: var(--font-body);
+    /* 
+       Create a sharp diagonal split background:
+       Top-left is #F8A84A, bottom-right is the theme's default background color (var(--bg-main)).
+       135deg means it starts top-left to bottom-right.
+    */
+    background: linear-gradient(135deg, #F8A84A 0%, #F8A84A 50%, var(--bg-main) 50%, var(--bg-main) 100%);
+    /* Set a fallback for older browsers or smooth transitions */
     background-color: var(--bg-main);
+    background-attachment: fixed;
+    /* Keeps the diagonal split stationary when scrolling */
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -169,7 +188,8 @@ a {
     font-size: 2rem;
     margin-bottom: 3rem;
     text-align: center;
-    color: var(--text-secondary);
+    color: var(--text-primary);
+    /* Ensure it's legible if it crosses the high-contrast diagonal */
     font-style: italic;
     /* Adds a touch of editorial elegance */
 }
@@ -362,6 +382,13 @@ a {
     font-size: 0.9rem;
 }
 
+[data-theme="dark"] .site-footer {
+    /* In dark mode, the footer is on the orange #F8A84A background, so we force dark text */
+    color: #4A3216;
+    /* Deep warm grey/brown for high contrast against orange */
+    border-top-color: rgba(0, 0, 0, 0.1);
+}
+
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -378,6 +405,15 @@ a {
 
 .social-icon:hover {
     color: var(--accent);
+}
+
+[data-theme="dark"] .social-icon {
+    /* High contrast icons on the orange background */
+    color: #4A3216;
+}
+
+[data-theme="dark"] .social-icon:hover {
+    color: #1A1A1A;
 }
 
 /* ============================================
