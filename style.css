@@ -1,477 +1,426 @@
-/* Basic Reset & Font */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa; /* Lighter grey background */
-    color: #343a40; /* Darker text color */
-    line-height: 1.6;
-}
-
-/* Header Styling */
-header {
-    background-color: #343a40; /* Dark grey */
-    color: #f8f9fa; /* Light text */
-    padding: 2.5rem 1rem;
-    text-align: center;
-    border-bottom: 5px solid #007bff; /* Blue accent */
-}
-
-header h1 {
-    margin: 0 0 0.5rem 0;
-    font-weight: 700;
-    font-size: 2.5rem;
-}
-
-header p {
-    margin: 0;
-    font-weight: 300;
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-/* Main Content Area */
-main {
-    max-width: 1200px;
-    margin: 3rem auto; /* Center the content with more top/bottom margin */
-    padding: 0 1.5rem;
-}
-
-main h2 {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #495057; /* Slightly lighter dark grey */
-}
-
-/* Project Grid Layout */
-.project-grid {
-    display: grid;
-    /* Adjust minmax for desired card width */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem; /* Increased gap */
-}
-
-/* Individual Project Card Styling */
-.project-card {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6; /* Light border */
-    border-radius: 8px;
-    padding: 1.5rem 1.75rem; /* Slightly more padding */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
-    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: space-between; /* Push links to bottom */
-    min-height: 200px; /* Ensure cards have consistent minimum height */
-}
-
-.project-card:hover {
-    transform: translateY(-6px); /* Slightly more lift */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Increased shadow on hover */
-}
-
-.project-card h3 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #007bff; /* Blue title */
-}
-
-.project-card p {
-    font-size: 0.95rem; /* Slightly larger description text */
-    color: #495057;
-    flex-grow: 1; /* Allow description to take available space */
-    margin-bottom: 1.5rem; /* Space above the links */
-}
-
-/* Project Links Container */
-.project-links {
-    margin-top: auto; /* Push to the bottom */
-    display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller cards/screens */
-    gap: 0.75rem; /* Space between buttons */
-}
-
-/* Button Styling (General) */
-.btn {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-/* Primary Button (View Project) */
-.btn-primary {
-    background-color: #007bff;
-    color: #ffffff;
-    border-color: #007bff;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    color: #ffffff;
-}
-
-/* Secondary Button (View Code) */
-.btn-secondary {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-    border-color: #545b62;
-    color: #ffffff;
-}
-
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    margin-top: 4rem;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-    color: #6c757d; /* Grey text */
-    border-top: 1px solid #dee2e6; /* Light border */
-    background-color: #e9ecef; /* Very light grey background */
-}
-
-footer p {
-    margin: 0.3rem 0;
-}
-
-footer a {
-    color: #007bff; /* Blue links */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Optional: Add media queries for fine-tuning responsiveness if needed */
-/* @media (max-width: 768px) { ... } */
-
 /* ============================================
-   ENHANCED BADGE SYSTEM STYLES
+   ANTHROPIC-INSPIRED MINIMALIST THEME
    ============================================ */
 
 /* CSS Variables for Light/Dark Themes */
 :root {
-    /* Light Theme (Default) */
-    --primary: #4e73df;
-    --secondary: #f8f9fc;
-    --accent: #36b9cc;
-    --dark: #5a5c69;
-    --light: #f8f9fc;
+    /* Sophisticated Minimalist Light Theme */
+    --bg-main: #FAF9F6;
+    /* Cream/Off-white background */
+    --bg-card: #FFFFFF;
+    /* Crisp white cards */
+    --text-primary: #1A1A1A;
+    /* Very dark charcoal/almost black */
+    --text-secondary: #5A5A5A;
+    /* Medium grey for secondary text */
+    --accent: #D94632;
+    /* Subtle terracotta/rust accent inspired by Claude */
 
-    /* Background Colors */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fc;
-    --bg-hero: linear-gradient(135deg, #4e73df 0%, #36b9cc 100%);
-    --bg-footer: #5a5c69;
+    /* Borders and Shadows (Soft) */
+    --border-light: rgba(0, 0, 0, 0.06);
+    --border-hover: rgba(0, 0, 0, 0.12);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.08);
+    /* Sophisticated elevated shadow */
 
-    /* Text Colors */
-    --text-primary: #5a5c69;
-    --text-secondary: #6c757d;
-    --text-on-primary: #ffffff;
-
-    /* Border Colors */
-    --border-light: #dee2e6;
-    --border-medium: #ced4da;
-
-    /* Shadow Colors */
-    --shadow-light: rgba(0, 0, 0, 0.1);
-    --shadow-medium: rgba(0, 0, 0, 0.15);
+    /* Typography */
+    --font-heading: 'Georgia', serif;
+    /* Classic, readable serif */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Dark Theme - Deep Navy/Slate Palette */
 [data-theme="dark"] {
-    /* Sophisticated Dark Theme Colors */
-    --primary: #6bb6ff; /* Bright blue primary */
-    --secondary: #1e2a3a; /* Deep navy secondary */
-    --accent: #8ab4f8; /* Light blue accent */
-    --dark: #0f1419; /* Deep dark navy */
-    --light: #2d3b4f; /* Medium slate */
+    /* Refined Deep Dark Theme */
+    --bg-main: #1C1C1A;
+    /* Very dark, warm-tinted grey */
+    --bg-card: #272725;
+    /* Slightly lighter elevated surface */
+    --text-primary: #ECECEC;
+    /* Off-white readable text */
+    --text-secondary: #A0A09B;
+    /* Muted grey */
+    --accent: #E5A96E;
+    /* Muted golden/sand accent */
 
-    /* Background Colors - Sophisticated Dark Tones */
-    --bg-primary: #3d4f63; /* Lighter card backgrounds for readability */
-    --bg-secondary: #1e2a3a; /* Main background - deep navy */
-    --bg-hero: linear-gradient(135deg, #2d3b4f 0%, #1e2a3a 100%); /* Softer navy gradient */
-    --bg-footer: #0f1419; /* Footer - deepest navy */
-
-    /* Text Colors - Enhanced Readability */
-    --text-primary: #f0f8ff; /* Brighter white text */
-    --text-secondary: #b8d4e8; /* Lighter blue-grey for secondary text */
-    --text-on-primary: #ffffff;
-
-    /* Border Colors - Lighter for Better Contrast */
-    --border-light: #4a5e73; /* Lighter navy borders */
-    --border-medium: #3d4f63; /* Medium borders matching cards */
-
-    /* Shadow Colors - Navy Tinted */
-    --shadow-light: rgba(30, 42, 58, 0.3);
-    --shadow-medium: rgba(15, 20, 25, 0.4);
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.16);
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 16px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* Dark Theme Body Styles */
-[data-theme="dark"] body {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Dark Theme Project Cards */
-[data-theme="dark"] .project-card {
-    background-color: var(--bg-primary);
-    border-color: var(--border-light);
-    box-shadow: 0 4px 6px var(--shadow-light);
-}
-
-[data-theme="dark"] .project-card:hover {
-    box-shadow: 0 10px 20px var(--shadow-medium);
-}
-
-/* Dark Theme Project Titles */
-[data-theme="dark"] .project-title {
-    color: #ffd700; /* Golden yellow for dark backgrounds */
-}
-
-/* Dark Theme Card Text - Make Much Lighter */
-[data-theme="dark"] .card-text {
-    color: #ffffff !important; /* Force bright white text */
-    font-weight: 400;
-}
-
-/* Dark Theme Card Body Text */
-[data-theme="dark"] .card-body p {
-    color: #ffffff !important; /* Bright white for descriptions */
-}
-
-/* Dark Theme Footer */
-[data-theme="dark"] footer {
-    background-color: var(--bg-footer);
-    color: var(--text-primary);
-    border-top-color: var(--border-light);
-}
-
-/* Dark Theme Social Icons */
-[data-theme="dark"] .social-icon {
-    color: var(--text-primary);
-}
-
-[data-theme="dark"] .social-icon:hover {
-    color: var(--accent);
-}
-
-/* Dark Theme Hero Section */
-[data-theme="dark"] .hero-section {
-    background: var(--bg-hero);
-}
-
-/* Dark Theme Buttons - Even Lighter Colors */
-[data-theme="dark"] .btn-outline-primary {
-    border-color: #b8d4ff; /* Even lighter blue border */
-    color: #d4e8ff; /* Very light blue text */
-}
-
-[data-theme="dark"] .btn-outline-primary:hover {
-    background-color: #a8c8ff; /* Even lighter blue background */
-    border-color: #b8d4ff; /* Even lighter blue border */
-    color: #1e2a3a; /* Dark navy text for contrast */
-}
-
-/* Dark Theme Skeleton Loader */
-[data-theme="dark"] .skeleton-card {
-    background-color: var(--bg-primary);
-    box-shadow: 0 4px 6px var(--shadow-light);
-}
-
-/* Dark Theme Main Content Area */
-[data-theme="dark"] main {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-}
-
-/* Dark Theme Skeleton Elements */
-[data-theme="dark"] .skeleton {
-    background-color: #4a5e73; /* Lighter navy for skeleton */
-    background: linear-gradient(90deg, #4a5e73 25%, #5a6e83 50%, #4a5e73 75%);
-    background-size: 200% 100%;
-}
-
-/* Dark Theme Project Grid Container */
-[data-theme="dark"] .project-grid {
-    background-color: transparent; /* Ensure it doesn't override main background */
-}
-
-/* Dark Theme Section Backgrounds */
-[data-theme="dark"] section {
-    background-color: var(--bg-secondary);
-}
-
-/* Theme Transition */
+/* Base Reset & Transitions */
 * {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Smooth transition for theme switching */
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Badge Color Variables */
-:root {
-    /* Enhanced Language Badge Colors */
-    --lang-typescript: #3178C6;
-    --lang-javascript: #F1E05A;
-    --lang-python: #3572A5;
-    --lang-golang: #00ADD8;
-    --lang-dart: #0175C2;
-    --lang-java: #B07219;
-    --lang-cpp: #F34B7D;
-    --lang-rust: #DEA584;
-    --lang-php: #4F5D95;
-    --lang-ruby: #701516;
-    --lang-csharp: #239120;
-    --lang-swift: #FA7343;
-    --lang-kotlin: #7F52FF;
-    --lang-html: #E34F26;
-    --lang-css: #1572B6;
-
-    /* Enhanced Project Type Colors */
-    --project-web: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --project-cli: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    --project-mobile: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-    --project-extension: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-    --project-package: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    --project-mcp: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    --project-learning: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    --project-tts: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-    --project-translation: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --project-networking: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Badge Positioning */
-.project-badge {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 10;
+/* Typography Classes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    /* Regular weight for elegance */
+    margin-bottom: 1rem;
+    line-height: 1.3;
 }
 
-.language-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    font-size: 0.8rem;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ============================================
+   LAYOUT STRUCTURE
+   ============================================ */
+
+/* Header Hero */
+.site-header {
+    padding: 6rem 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    /* Remove background gradient, keep it spacious and clean */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-hover);
+    padding-bottom: 0.2rem;
+    font-weight: 500;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.action-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.05);
+    /* Very subtle interaction */
+}
+
+/* Main Content area */
+.site-main {
+    flex: 1;
+    padding: 0 2rem 6rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    /* Adds a touch of editorial elegance */
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+/* ============================================
+   PROJECT CARDS
+   ============================================ */
+.project-card-link {
+    display: block;
+    /* Make the whole card a clickable link */
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    /* Soft rounding */
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    /* Faster transform for snappy feel */
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+/* The sophisticated hover effect: slight lift + deep, soft shadow */
+.project-card-link:hover .project-card,
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+}
+
+/* Image container */
+.project-image-container {
+    height: 180px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.03);
+    /* Placeholder color until loaded */
+    border-bottom: 1px solid var(--border-light);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Slow, subtle zoom on hover */
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-card-link:hover .project-image,
+.project-card:hover .project-image {
+    transform: scale(1.03);
+}
+
+/* Card Body */
+.card-content {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
     font-weight: 600;
+    /* Contrast against serif heading */
+    font-family: var(--font-body);
+    /* Use sans-serif for card titles for modern feel */
 }
 
-/* Enhanced Language Badge Styles */
-.language-badge {
-    padding: 4px 10px;
-    border-radius: 14px;
+.card-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+/* Badges System - Redesigned to be Minimalist and Positioned Below Image */
+.badges-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 3px 8px;
+    border-radius: 4px;
     font-size: 0.65rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--border-light);
+    /* Default styling for light mode */
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
 }
 
-.language-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+[data-theme="dark"] .badge {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-light);
+    color: var(--text-secondary);
 }
 
-/* Language Badge Color Classes */
-.badge-typescript { background: var(--lang-typescript); color: white; }
-.badge-javascript { background: var(--lang-javascript); color: #2c3e50; }
-.badge-python { background: var(--lang-python); color: white; }
-.badge-golang { background: var(--lang-golang); color: white; }
-.badge-dart { background: var(--lang-dart); color: white; }
-.badge-java { background: var(--lang-java); color: white; }
-.badge-cpp { background: var(--lang-cpp); color: white; }
-.badge-rust { background: var(--lang-rust); color: #2c3e50; }
-.badge-php { background: var(--lang-php); color: white; }
-.badge-ruby { background: var(--lang-ruby); color: white; }
-.badge-csharp { background: var(--lang-csharp); color: white; }
-.badge-swift { background: var(--lang-swift); color: white; }
-.badge-kotlin { background: var(--lang-kotlin); color: white; }
-.badge-html { background: var(--lang-html); color: white; }
-.badge-css { background: var(--lang-css); color: white; }
+/* Specific soft colors for badges if needed, otherwise rely on the base */
+.badge-lang {
+    /* very subtle blue tint */
+    background-color: rgba(49, 120, 198, 0.05);
+    border-color: rgba(49, 120, 198, 0.2);
+    color: #3178C6;
+}
 
-/* Enhanced Project Badge Styles */
-.project-badge {
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    min-width: 60px;
+[data-theme="dark"] .badge-lang {
+    color: #8ab4f8;
+}
+
+.badge-type {
+    /* neutral tint */
+    background-color: rgba(90, 90, 90, 0.05);
+}
+
+/* ============================================
+   SKELETON LOADER
+   ============================================ */
+.skeleton-card {
+    pointer-events: none;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 180px;
+    animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-title {
+    height: 1.5rem;
+    width: 60%;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-text {
+    height: 1rem;
+    width: 100%;
+    margin-bottom: 0.6rem;
+    border-radius: 4px;
+    animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-short {
+    width: 40%;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        background-color: var(--border-light);
+    }
+
+    50% {
+        background-color: var(--border-hover);
+    }
+
+    100% {
+        background-color: var(--border-light);
+    }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-light);
     text-align: center;
-}
-
-.project-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-/* Project Badge Color Classes */
-.badge-web { background: var(--project-web); }
-.badge-cli { background: var(--project-cli); }
-.badge-mobile { background: var(--project-mobile); }
-.badge-extension { background: var(--project-extension); }
-.badge-package { background: var(--project-package); }
-.badge-mcp { background: var(--project-mcp); }
-.badge-learning { background: var(--project-learning); }
-.badge-tts { background: var(--project-tts); }
-.badge-translation { background: var(--project-translation); }
-.badge-networking { background: var(--project-networking); }
-
-/* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
+    color: var(--text-secondary);
     font-size: 0.9rem;
-    font-weight: 500;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
 }
 
-.btn-outline-primary {
-    background-color: transparent;
-    border-color: var(--primary);
-    color: var(--primary);
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.btn-outline-primary:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(78, 115, 223, 0.3);
+.social-links {
+    margin-bottom: 1.5rem;
 }
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.social-icon:hover {
+    color: var(--accent);
+}
+
+/* ============================================
+   RESPONSIVENESS
+   ============================================ */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 4rem 1.5rem 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .project-grid {
+        gap: 2rem;
+        /* Slightly smaller cards on mobile */
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .site-main {
+        padding: 0 1.5rem 4rem;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+/* Fade in animation for newly inserted cards */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card-link {
+    animation: fadeInSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Delays for staggered loading effect are added via JS */
