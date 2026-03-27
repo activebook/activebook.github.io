@@ -3,10 +3,19 @@
     "name": "gllm",
     "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.",
     "html_url": "https://github.com/activebook/gllm",
-    "stargazers_count": 2,
+    "stargazers_count": 3,
     "forks_count": 0,
     "language": "Go",
-    "type": "CLI Tool"
+    "type": "Agentic CLI"
+  },
+  {
+    "name": "gllm-companion",
+    "description": "Enable gllm with direct access to IDE workspace.",
+    "html_url": "https://github.com/activebook/gllm-companion",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript",
+    "type": "VS Code Extension"
   },
   {
     "name": "auto-wechat",
