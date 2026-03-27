@@ -2,7 +2,11 @@
   "featuredRepos": [
     {
       "name": "gllm",
-      "type": "CLI Tool"
+      "type": "Agentic CLI"
+    },
+    {
+      "name": "gllm-companion",
+      "type": "VS Code Extension"
     },
     {
       "name": "auto-wechat",
