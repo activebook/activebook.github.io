@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod +x generate-repos.sh
-          ./generate-repos.sh
+          bash -x ./generate-repos.sh
 
       - name: Update README.md
         run: python update_readme.py
