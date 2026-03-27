@@ -10,7 +10,7 @@
   },
   {
     "name": "gllm-companion",
-    "description": "Enable gllm with direct access to IDE workspace.",
+    "description": "A VS Code extension that bridges the gllm CLI tool with direct access to IDE workspace., enabling native inline diffs for AI-suggested code changes.",
     "html_url": "https://github.com/activebook/gllm-companion",
     "stargazers_count": 1,
     "forks_count": 0,
@@ -96,7 +96,7 @@
     "stargazers_count": 2,
     "forks_count": 0,
     "language": "Dart",
-    "type": "Networking"
+    "type": "Proxy Automator"
   },
   {
     "name": "SakanaVision",
