@@ -14,7 +14,7 @@ New worlds to explore
 gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.
 
 - gllm-companion [gllm-companion](https://activebook.github.io/gllm-companion/)
-A VS Code extension that bridges the gllm CLI tool with direct access to IDE workspace., enabling native inline diffs for AI-suggested code changes.
+A VS Code extension that bridges the gllm CLI tool with direct access to IDE workspace, enabling native inline diffs for AI-suggested code changes and enriching gllm sessions with open editor context, cursor position, and selected text.
 
 - auto-wechat [auto-wechat](https://activebook.github.io/auto-wechat/)
 An automation tool that bulk-sends messages to every contact in WeChat's contact list using clipboard content. It uses computer-vision to locate UI elements and to drive the mouse and keyboard — no WeChat API or plugin required.
