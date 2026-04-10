@@ -93,7 +93,7 @@
     "name": "clash_forge",
     "description": "A user-friendly multi-batch tool to streamline proxy configurations for Clash. Convert subscriptions and proxy URLs into Clash-compatible YAML files with automated tasks and clear feedback. Supports vless, vmess, trojan and ss protocols.",
     "html_url": "https://github.com/activebook/clash_forge",
-    "stargazers_count": 2,
+    "stargazers_count": 3,
     "forks_count": 0,
     "language": "Dart",
     "type": "Proxy Automator"
