@@ -9,6 +9,10 @@
       "type": "VS Code Extension"
     },
     {
+      "name": "tunnel-worker",
+      "type": "Cloudflare Worker"
+    },
+    {
       "name": "auto-wechat",
       "type": "CV Automation"
     },
