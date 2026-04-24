@@ -16,6 +16,9 @@ gllm is a powerful CLI tool designed to interact seamlessly with various Large L
 - gllm-companion [gllm-companion](https://activebook.github.io/gllm-companion/)
 A VS Code extension that bridges the gllm CLI tool with direct access to IDE workspace, enabling native inline diffs for AI-suggested code changes and enriching gllm sessions with open editor context, cursor position, and selected text.
 
+- tunnel-worker [tunnel-worker](https://activebook.github.io/tunnel-worker/)
+Edge Tunnel for seamless global connectivity
+
 - auto-wechat [auto-wechat](https://activebook.github.io/auto-wechat/)
 An automation tool that bulk-sends messages to every contact in WeChat's contact list using clipboard content. It uses computer-vision to locate UI elements and to drive the mouse and keyboard — no WeChat API or plugin required.
 

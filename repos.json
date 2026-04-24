@@ -18,6 +18,15 @@
     "type": "VS Code Extension"
   },
   {
+    "name": "tunnel-worker",
+    "description": "Edge Tunnel for seamless global connectivity",
+    "html_url": "https://github.com/activebook/tunnel-worker",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript",
+    "type": "Cloudflare Worker"
+  },
+  {
     "name": "auto-wechat",
     "description": "An automation tool that bulk-sends messages to every contact in WeChat's contact list using clipboard content. It uses computer-vision to locate UI elements and to drive the mouse and keyboard — no WeChat API or plugin required.",
     "html_url": "https://github.com/activebook/auto-wechat",
