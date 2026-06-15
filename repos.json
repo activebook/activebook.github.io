@@ -22,7 +22,7 @@
     "description": "Edge Tunnel for seamless global connectivity",
     "html_url": "https://github.com/activebook/tunnel-worker",
     "stargazers_count": 2,
-    "forks_count": 0,
+    "forks_count": 1,
     "language": "TypeScript",
     "type": "Cloudflare Worker"
   },
