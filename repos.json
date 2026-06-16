@@ -111,8 +111,8 @@
     "name": "SakanaVision",
     "description": "Sakana Vision - 日本語の自動翻訳ツール a Node version of the Japanese-to-English translation tool. Translate text in any active window with simple keyboard shortcuts without switching applications. Supports customizable prompts to fit to any translation task and text extraction.",
     "html_url": "https://github.com/activebook/SakanaVision",
-    "stargazers_count": 1,
-    "forks_count": 0,
+    "stargazers_count": 2,
+    "forks_count": 1,
     "language": "JavaScript",
     "type": "Translation"
   },
