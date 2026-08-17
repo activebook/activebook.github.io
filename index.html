@@ -1,98 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ActiveBook Projects</title>
-    <meta name="description" content="Showcase of projects by ActiveBook, exploring modern code and design.">
+    <title>ActiveBook | Agora Lab — Software & AI Showcase</title>
+    <meta name="description" content="State-of-the-art showcase of software engineering, agentic AI, macOS native tools, and audio systems by ActiveBook.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
         href="https://raw.githubusercontent.com/activebook/activebook.github.io/main/images/icon.png">
 
-    <!-- Fonts: Georgia for serif, Inter for clean sans -->
+    <!-- Fonts: Plus Jakarta Sans for headers, Inter for UI, JetBrains Mono for telemetry -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Minimal Font Awesome for minimal icons if needed -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-content">
-            <h1 class="hero-title">My Agora Lab</h1>
-            <p class="hero-subtitle">
-                Code unlocks the mind<br>
-                Granting access to freedom<br>
-                New worlds to explore
-            </p>
-            <div class="hero-actions">
-                <a href="https://github.com/activebook" class="action-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub Profile
+    <!-- Ambient Background Lighting Orbs -->
+    <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
+
+    <!-- Floating Frosted Glass Header -->
+    <header class="navbar-wrapper">
+        <nav class="navbar glass-card" aria-label="Main Navigation">
+            <a href="#" class="brand-link" aria-label="ActiveBook Agora Lab Home">
+                <div class="brand-avatar">
+                    <img src="./images/icon.png" alt="ActiveBook Logo" class="brand-logo" onerror="this.style.display='none';">
+                </div>
+                <div class="brand-meta">
+                    <span class="brand-name">Agora Lab</span>
+                    <span class="brand-tag">v2.0</span>
+                </div>
+            </a>
+
+            <div class="nav-actions">
+                <a href="https://github.com/activebook" class="btn btn-glass btn-github" target="_blank" rel="noopener noreferrer" aria-label="View ActiveBook on GitHub">
+                    <i class="fab fa-github"></i>
+                    <span class="btn-text">GitHub</span>
                 </a>
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
+                <button id="theme-toggle" class="btn btn-icon theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle light/dark theme">
+                    <i class="fas fa-sun theme-icon-sun"></i>
+                    <i class="fas fa-moon theme-icon-moon"></i>
                 </button>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main class="site-main">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-badge-container">
+                <div class="hero-badge">
+                    <span class="status-indicator">
+                        <span class="status-ping"></span>
+                        <span class="status-dot"></span>
+                    </span>
+                    <span>Continuous Innovation & Systems Engineering</span>
+                </div>
+            </div>
+
+            <h1 class="hero-title">
+                My <span class="gradient-text">Agora Lab</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Code unlocks the mind <span class="bullet-sep">•</span> Granting access to freedom <span class="bullet-sep">•</span> New worlds to explore
+            </p>
+
+            <!-- Dynamic Telemetry KPI Banner -->
+            <div class="kpi-banner glass-card" id="kpi-banner">
+                <div class="kpi-item">
+                    <span class="kpi-val" id="kpi-projects-count">17</span>
+                    <span class="kpi-lbl"><i class="fas fa-cubes"></i> Active Projects</span>
+                </div>
+                <div class="kpi-divider"></div>
+                <div class="kpi-item">
+                    <span class="kpi-val" id="kpi-stars-count">--</span>
+                    <span class="kpi-lbl"><i class="fas fa-star text-amber"></i> GitHub Stars</span>
+                </div>
+                <div class="kpi-divider"></div>
+                <div class="kpi-item">
+                    <span class="kpi-val" id="kpi-langs-count">--</span>
+                    <span class="kpi-lbl"><i class="fas fa-code text-cyan"></i> Core Languages</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Filter & Search Controls -->
+        <section class="controls-section">
+            <div class="controls-wrapper glass-card">
+                <!-- Search Box -->
+                <div class="search-box-wrapper">
+                    <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                    <input type="text" id="project-search" class="search-input" placeholder="Search by name, tech stack, keyword..." aria-label="Search projects">
+                    <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Category Filter Chips -->
+                <div class="filter-chips-container" id="filter-chips-container" role="tablist" aria-label="Project category filters">
+                    <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">
+                        <i class="fas fa-border-all"></i> All <span class="chip-count" id="count-all">17</span>
+                    </button>
+                    <button class="filter-chip" data-filter="ai-agent" role="tab" aria-selected="false">
+                        <i class="fas fa-robot"></i> AI & CLI <span class="chip-count" id="count-ai">--</span>
+                    </button>
+                    <button class="filter-chip" data-filter="macos-native" role="tab" aria-selected="false">
+                        <i class="fab fa-apple"></i> macOS & Native <span class="chip-count" id="count-native">--</span>
+                    </button>
+                    <button class="filter-chip" data-filter="extensions" role="tab" aria-selected="false">
+                        <i class="fas fa-puzzle-piece"></i> Extensions <span class="chip-count" id="count-ext">--</span>
+                    </button>
+                    <button class="filter-chip" data-filter="voice-audio" role="tab" aria-selected="false">
+                        <i class="fas fa-waveform-lines"></i> Voice & TTS <span class="chip-count" id="count-voice">--</span>
+                    </button>
+                    <button class="filter-chip" data-filter="tools-edge" role="tab" aria-selected="false">
+                        <i class="fas fa-bolt"></i> Tools & Cloud <span class="chip-count" id="count-tools">--</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Summary Strip -->
+            <div class="results-meta-bar">
+                <span id="results-count-text" class="results-count-text">Showing 17 projects</span>
+                <div class="sort-wrapper">
+                    <label for="project-sort" class="sort-label"><i class="fas fa-arrow-down-short-wide"></i> Sort:</label>
+                    <select id="project-sort" class="sort-select" aria-label="Sort projects">
+                        <option value="featured">Featured Order</option>
+                        <option value="stars">Most Stars ★</option>
+                        <option value="name">Alphabetical (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Showcase Grid -->
         <section class="projects-section">
-            <h2 class="section-title">Projects Undergoing Development</h2>
-
             <div id="project-list-container" class="project-grid">
-                <!-- Data will be injected here by script.js -->
+                <!-- High-Fidelity Glassmorphic Skeletons for Initial Load -->
+                <div class="project-card-skeleton glass-card">
+                    <div class="skeleton-shimmer skeleton-media"></div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-badges">
+                            <div class="skeleton-shimmer skeleton-pill"></div>
+                            <div class="skeleton-shimmer skeleton-pill"></div>
+                        </div>
+                        <div class="skeleton-shimmer skeleton-title"></div>
+                        <div class="skeleton-shimmer skeleton-line"></div>
+                        <div class="skeleton-shimmer skeleton-line short"></div>
+                    </div>
+                </div>
+                <div class="project-card-skeleton glass-card">
+                    <div class="skeleton-shimmer skeleton-media"></div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-badges">
+                            <div class="skeleton-shimmer skeleton-pill"></div>
+                            <div class="skeleton-shimmer skeleton-pill"></div>
+                        </div>
+                        <div class="skeleton-shimmer skeleton-title"></div>
+                        <div class="skeleton-shimmer skeleton-line"></div>
+                        <div class="skeleton-shimmer skeleton-line short"></div>
+                    </div>
+                </div>
+                <div class="project-card-skeleton glass-card">
+                    <div class="skeleton-shimmer skeleton-media"></div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-badges">
+                            <div class="skeleton-shimmer skeleton-pill"></div>
+                            <div class="skeleton-shimmer skeleton-pill"></div>
+                        </div>
+                        <div class="skeleton-shimmer skeleton-title"></div>
+                        <div class="skeleton-shimmer skeleton-line"></div>
+                        <div class="skeleton-shimmer skeleton-line short"></div>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Skeleton Loader Example -->
-                <div class="project-card skeleton-card">
-                    <div class="skeleton-image"></div>
-                    <div class="card-content">
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text skeleton-short"></div>
-                    </div>
-                </div>
-                <!-- Add 2 more skeletons for initial load impression -->
-                <div class="project-card skeleton-card">
-                    <div class="skeleton-image"></div>
-                    <div class="card-content">
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text skeleton-short"></div>
-                    </div>
-                </div>
-                <div class="project-card skeleton-card">
-                    <div class="skeleton-image"></div>
-                    <div class="card-content">
-                        <div class="skeleton-title"></div>
-                        <div class="skeleton-text"></div>
-                        <div class="skeleton-text skeleton-short"></div>
-                    </div>
-                </div>
+            <!-- Empty State Container -->
+            <div id="empty-state" class="empty-state glass-card" style="display: none;">
+                <div class="empty-icon"><i class="fas fa-compass"></i></div>
+                <h3 class="empty-title">No matching projects found</h3>
+                <p class="empty-subtitle">Try adjusting your search keywords or switching category filters.</p>
+                <button id="reset-filters-btn" class="btn btn-glass">Reset All Filters</button>
             </div>
         </section>
     </main>
 
+    <!-- Refined Footer -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://github.com/activebook" class="social-icon" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+        <div class="footer-content glass-card">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-title">ActiveBook Agora Lab</span>
+                    <p class="footer-desc">Crafting thoughtful software, AI tools, and resilient systems.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/activebook" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
             </div>
-            <p class="copyright">© <span id="current-year">2026</span> ActiveBook Projects. All rights reserved.</p>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span id="current-year">2026</span> ActiveBook.</p>
+                <div class="footer-badge author-badge">
+                    <span class="author-avatar"><i class="fas fa-terminal"></i></span>
+                    <span>Crafted by <strong class="author-name">Charles Liu</strong></span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- My custom script -->
-    <script src="script.js?v=2"></script>
+    <!-- Application Script -->
+    <script src="script.js?v=5"></script>
 </body>
 
 </html>
