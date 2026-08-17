@@ -1,5 +1,14 @@
 [
   {
+    "name": "tranz",
+    "description": "Translate and replace active text in-place across any macOS app via LLMs.",
+    "html_url": "https://github.com/activebook/tranz",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Swift",
+    "type": "macOS App"
+  },
+  {
     "name": "gllm",
     "description": "gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.",
     "html_url": "https://github.com/activebook/gllm",
@@ -142,14 +151,5 @@
     "forks_count": 1,
     "language": "JavaScript",
     "type": "TTS Engine"
-  },
-  {
-    "name": "tranz",
-    "description": "Translate and replace active text in-place across any macOS app via LLMs.",
-    "html_url": "https://github.com/activebook/tranz",
-    "stargazers_count": 1,
-    "forks_count": 0,
-    "language": "Swift",
-    "type": "macOS App"
   }
 ]

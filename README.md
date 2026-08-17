@@ -10,6 +10,9 @@ New worlds to explore
 
 ## Projects description
 
+- tranz [tranz](https://activebook.github.io/tranz/)
+Translate and replace active text in-place across any macOS app via LLMs.
+
 - gllm [gllm](https://activebook.github.io/gllm/)
 gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.
 
@@ -57,7 +60,4 @@ A lightweight, desktop Text-to-Speech (TTS) application powered by Google AI's G
 
 - KokoroVoice [KokoroVoice](https://activebook.github.io/KokoroVoice/)
 A lightweight, local Text-to-Speech engine powered by Kokoro TTS. Convert text to natural-sounding speech without token limits or subscription costs.
-
-- tranz [tranz](https://activebook.github.io/tranz/)
-Translate and replace active text in-place across any macOS app via LLMs.
 

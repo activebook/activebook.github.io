@@ -1,6 +1,10 @@
 {
   "featuredRepos": [
     {
+      "name": "tranz",
+      "type": "macOS App"
+    },
+    {
       "name": "gllm",
       "type": "Agentic CLI"
     },
@@ -63,10 +67,6 @@
     {
       "name": "KokoroVoice",
       "type": "TTS Engine"
-    },
-    {
-      "name": "tranz",
-      "type": "macOS App"
     }
   ]
 }
