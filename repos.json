@@ -142,5 +142,14 @@
     "forks_count": 1,
     "language": "JavaScript",
     "type": "TTS Engine"
+  },
+  {
+    "name": "tranz",
+    "description": "Translate and replace active text in-place across any macOS app via LLMs.",
+    "html_url": "https://github.com/activebook/tranz",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Swift",
+    "type": "macOS App"
   }
 ]
