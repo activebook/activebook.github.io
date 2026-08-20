@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 4. Fetch Repos and Initialize Engine
-    fetch('./repos.json')
+    fetch('./repos.json?v=' + Date.now())
         .then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
