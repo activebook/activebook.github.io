@@ -1,5 +1,14 @@
 [
   {
+    "name": "tranz-video",
+    "description": "Tranz Video is an extension that lets you translate any text inside a video.",
+    "html_url": "https://github.com/activebook/tranz-video",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript",
+    "type": "Chrome Extension"
+  },
+  {
     "name": "tranz",
     "description": "Translate and replace active text in-place across any macOS app via LLMs.",
     "html_url": "https://github.com/activebook/tranz",

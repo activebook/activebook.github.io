@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                      name.includes('gllm') || desc.includes('llm') || desc.includes('model') || desc.includes('copilot');
         
         const isNative = type.includes('macos') || type.includes('native') || type.includes('cv') ||
-                         name.includes('tranz') || name.includes('sakana') || name.includes('wechat');
+                         name === 'tranz' || name.includes('sakana') || name.includes('wechat');
 
         const isExtension = type.includes('extension') || type.includes('chrome') || type.includes('vs code');
 

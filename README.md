@@ -10,6 +10,9 @@ New worlds to explore
 
 ## Projects description
 
+- tranz-video [tranz-video](https://activebook.github.io/tranz-video/)
+Tranz Video is an extension that lets you translate any text inside a video.
+
 - tranz [tranz](https://activebook.github.io/tranz/)
 Translate and replace active text in-place across any macOS app via LLMs.
 

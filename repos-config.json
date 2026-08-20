@@ -1,6 +1,10 @@
 {
   "featuredRepos": [
     {
+      "name": "tranz-video",
+      "type": "Chrome Extension"
+    },
+    {
       "name": "tranz",
       "type": "macOS App"
     },
