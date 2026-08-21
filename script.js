@@ -45,6 +45,100 @@ document.addEventListener('DOMContentLoaded', () => {
         'Shell': '#89E051'
     };
 
+    // Curated Craftsmanship & Domain Capability Metadata
+    const repoCraftsmanship = {
+        'tranz-video': {
+            badge: 'OCR & Video',
+            highlight: 'In-Stream Subtitle Extraction',
+            icon: 'fa-closed-captioning'
+        },
+        'tranz': {
+            badge: 'AppKit • Accessibility',
+            highlight: 'In-Place macOS LLM Injection',
+            icon: 'fa-wand-magic-sparkles'
+        },
+        'clash_forge': {
+            badge: 'Multi-Protocol Core',
+            highlight: 'Automated YAML Proxy Pipeline',
+            icon: 'fa-shield-halved'
+        },
+        'gllm': {
+            badge: 'Multi-Agent CLI',
+            highlight: 'Autonomous LLM Workflows & MCP',
+            icon: 'fa-terminal'
+        },
+        'gllm-companion': {
+            badge: 'IDE Workspace Bridge',
+            highlight: 'Native Inline Diff & Context Sync',
+            icon: 'fa-code-compare'
+        },
+        'tunnel-worker': {
+            badge: 'Cloudflare Edge',
+            highlight: 'Zero-Trust Global Edge Tunnel',
+            icon: 'fa-network-wired'
+        },
+        'auto-wechat': {
+            badge: 'CV Computer Vision',
+            highlight: 'Non-Invasive GUI Driver',
+            icon: 'fa-eye'
+        },
+        'unlock-wechat': {
+            badge: 'Low-Level C Mutex',
+            highlight: 'Multi-Instance Process Unlocker',
+            icon: 'fa-lock-open'
+        },
+        'EverEtch': {
+            badge: 'Spaced Repetition',
+            highlight: 'Offline-First AI Vocabulary',
+            icon: 'fa-brain'
+        },
+        'media_downloader': {
+            badge: 'Chromium Sniffer',
+            highlight: 'Automated Stream Extractor',
+            icon: 'fa-download'
+        },
+        'atom-updater': {
+            badge: 'Self-Updating Daemon',
+            highlight: 'Atomic Binary Rollback Engine',
+            icon: 'fa-arrows-rotate'
+        },
+        'tts-mcp-server': {
+            badge: 'MCP Protocol',
+            highlight: 'Google Neural Speech Server',
+            icon: 'fa-server'
+        },
+        'copilot_sidebar': {
+            badge: 'DOM Prompt Engine',
+            highlight: 'Contextual AI Web Extractor',
+            icon: 'fa-table-columns'
+        },
+        'speechie': {
+            badge: 'Instant Hotkey TTS',
+            highlight: 'Lightweight Web Audio Reader',
+            icon: 'fa-volume-high'
+        },
+        'SakanaVision': {
+            badge: 'Native Window Hook',
+            highlight: 'Global Japanese In-Place OCR',
+            icon: 'fa-language'
+        },
+        'SakanaLens': {
+            badge: 'Python Vision Pipeline',
+            highlight: 'Hotkeyed Screen Translator',
+            icon: 'fa-magnifying-glass'
+        },
+        'GVoice': {
+            badge: 'Gemini Audio Engine',
+            highlight: 'Desktop Neural Speech Synthesis',
+            icon: 'fa-microphone-lines'
+        },
+        'KokoroVoice': {
+            badge: 'Local Neural Model',
+            highlight: 'Kokoro-82M Zero-Token TTS',
+            icon: 'fa-wave-square'
+        }
+    };
+
     // Category Classification Classifier
     function getCategoryForRepo(repo) {
         const name = (repo.name || '').toLowerCase();
@@ -109,13 +203,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. KPI Telemetry Calculator
     function updateTelemetryKPIs(repos) {
         const totalProjectsElem = document.getElementById('kpi-projects-count');
-        const totalStarsElem = document.getElementById('kpi-stars-count');
+        const totalDomainsElem = document.getElementById('kpi-domains-count');
         const totalLangsElem = document.getElementById('kpi-langs-count');
 
         if (totalProjectsElem) animateValue(totalProjectsElem, 0, repos.length, 800);
 
-        const totalStars = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
-        if (totalStarsElem) animateValue(totalStarsElem, 0, totalStars, 1000);
+        // Core domain categories (AI & CLI, macOS Native, Extensions, Voice & TTS, Tools & Edge)
+        const domainCount = 6;
+        if (totalDomainsElem) animateValue(totalDomainsElem, 0, domainCount, 800);
 
         const uniqueLangs = new Set(repos.map(r => r.language).filter(Boolean));
         if (totalLangsElem) animateValue(totalLangsElem, 0, uniqueLangs.size, 800);
@@ -177,10 +272,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Apply Sorting
-        if (currentSort === 'stars') {
-            filtered.sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0));
-        } else if (currentSort === 'name') {
+        if (currentSort === 'name') {
             filtered.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+        } else if (currentSort === 'language') {
+            filtered.sort((a, b) => (a.language || '').localeCompare(b.language || ''));
         }
 
         // Update Results Count Text
@@ -203,21 +298,32 @@ document.addEventListener('DOMContentLoaded', () => {
         filtered.forEach((repo, idx) => {
             const delay = (idx % 6) * 0.08 + 's';
             const langColor = languageColors[repo.language] || 'var(--accent-indigo)';
-            const stars = repo.stargazers_count || 0;
-            const forks = repo.forks_count || 0;
+            const meta = repoCraftsmanship[repo.name] || {
+                badge: repo.type || 'Engineering Tool',
+                highlight: repo.type || 'System Utility',
+                icon: 'fa-cube'
+            };
 
             const cardHTML = `
-                <a href="${repo.html_url}" class="project-card-link" target="_blank" rel="noopener noreferrer" style="animation-delay: ${delay};" aria-label="Open ${repo.name} repository">
+                <a href="${repo.html_url}" class="project-card-link" target="_blank" rel="noopener noreferrer" style="animation-delay: ${delay};" aria-label="Explore ${repo.name} repository">
                     <article class="project-card">
                         <div class="project-media-wrapper">
                             <img src="./images/${repo.name}.jpg" alt="${repo.name} Preview" class="project-image" loading="lazy" onerror="this.onerror=null;this.src='./images/icon.png';">
                             <div class="media-overlay"></div>
+                            <div class="media-shine-sweep" aria-hidden="true"></div>
                             <span class="media-type-badge">${repo.type || 'Tool'}</span>
+                            <span class="media-domain-pill"><i class="fas ${meta.icon}"></i> ${meta.badge}</span>
                         </div>
                         <div class="project-card-body">
                             <div class="project-header-row">
                                 <h3 class="project-title">${repo.name}</h3>
-                                <i class="fas fa-arrow-up-right-from-square project-arrow-icon" aria-hidden="true"></i>
+                                <span class="explore-icon-bubble" aria-hidden="true">
+                                    <i class="fas fa-arrow-up-right-from-square"></i>
+                                </span>
+                            </div>
+                            <div class="project-highlight-badge">
+                                <i class="fas fa-bolt text-indigo"></i>
+                                <span>${meta.highlight}</span>
                             </div>
                             <p class="project-desc">${repo.description || 'No description provided.'}</p>
                             <div class="project-card-footer">
@@ -225,15 +331,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span class="lang-dot" style="background-color: ${langColor};"></span>
                                     <span>${repo.language || 'Plain'}</span>
                                 </div>
-                                <div class="telemetry-stats">
-                                    <span class="stat-chip star" title="${stars} GitHub Stars">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <span>${stars}</span>
-                                    </span>
-                                    <span class="stat-chip fork" title="${forks} Forks">
-                                        <i class="fas fa-code-fork" aria-hidden="true"></i>
-                                        <span>${forks}</span>
-                                    </span>
+                                <div class="action-explore-pill">
+                                    <span>View Architecture</span>
+                                    <i class="fas fa-arrow-right explore-arrow" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -245,16 +345,18 @@ document.addEventListener('DOMContentLoaded', () => {
             tempDiv.innerHTML = cardHTML.trim();
             const cardElement = tempDiv.firstChild;
 
-            // Attach Mouse Spotlight Coordinate Tracking
+            // Attach Mouse Spotlight Coordinate Tracking with Immediate Enter Sync
             const cardArticle = cardElement.querySelector('.project-card');
             if (cardArticle) {
-                cardArticle.addEventListener('mousemove', (e) => {
+                const updateCoords = (e) => {
                     const rect = cardArticle.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
                     cardArticle.style.setProperty('--mouse-x', `${x}px`);
                     cardArticle.style.setProperty('--mouse-y', `${y}px`);
-                });
+                };
+                cardArticle.addEventListener('mouseenter', updateCoords, { passive: true });
+                cardArticle.addEventListener('mousemove', updateCoords, { passive: true });
             }
 
             projectContainer.appendChild(cardElement);
