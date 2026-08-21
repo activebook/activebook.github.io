@@ -9,6 +9,10 @@
       "type": "macOS App"
     },
     {
+      "name": "clash_forge",
+      "type": "Proxy Automator"
+    },
+    {
       "name": "gllm",
       "type": "Agentic CLI"
     },
@@ -51,10 +55,6 @@
     {
       "name": "speechie",
       "type": "Chrome Extension"
-    },
-    {
-      "name": "clash_forge",
-      "type": "Proxy Automator"
     },
     {
       "name": "SakanaVision",

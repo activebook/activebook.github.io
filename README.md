@@ -16,6 +16,9 @@ Tranz Video is an extension that lets you translate any text inside a video.
 - tranz [tranz](https://activebook.github.io/tranz/)
 Translate and replace active text in-place across any macOS app via LLMs.
 
+- clash_forge [clash_forge](https://activebook.github.io/clash_forge/)
+A user-friendly multi-batch tool to streamline proxy configurations for Clash. Convert subscriptions and proxy URLs into Clash-compatible YAML files with automated tasks and clear feedback. Supports vless, vmess, trojan and ss protocols.
+
 - gllm [gllm](https://activebook.github.io/gllm/)
 gllm is a powerful CLI tool designed to interact seamlessly with various Large Language Models (LLMs). Supports features like interactive chat, multi-turn conversations, file attachments, search integration, command agent, multi-agents workflow, deep research, mcp services, and extensive customization.
 
@@ -48,9 +51,6 @@ A Chrome extension that enhances your productivity by allowing you to extract we
 
 - speechie [speechie](https://activebook.github.io/speechie/)
 A lightweight chrome extension that makes tts easy. Select text on the web and press Alt+T to trigger text-to-speech.
-
-- clash_forge [clash_forge](https://activebook.github.io/clash_forge/)
-A user-friendly multi-batch tool to streamline proxy configurations for Clash. Convert subscriptions and proxy URLs into Clash-compatible YAML files with automated tasks and clear feedback. Supports vless, vmess, trojan and ss protocols.
 
 - SakanaVision [SakanaVision](https://activebook.github.io/SakanaVision/)
 Sakana Vision - 日本語の自動翻訳ツール a Node version of the Japanese-to-English translation tool. Translate text in any active window with simple keyboard shortcuts without switching applications. Supports customizable prompts to fit to any translation task and text extraction.

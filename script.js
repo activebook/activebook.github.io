@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'C': '#555555',
         'C++': '#F34B7D',
         'Rust': '#DEA584',
+        'Dart': '#00B4AB',
         'HTML': '#E34F26',
         'CSS': '#563D7C',
         'Shell': '#89E051'
