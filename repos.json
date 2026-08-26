@@ -1,5 +1,14 @@
 [
   {
+    "name": "Glance",
+    "description": "Capture anything on your screen. Understand it instantly.",
+    "html_url": "https://github.com/activebook/Glance",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Swift",
+    "type": "macOS App"
+  },
+  {
     "name": "tranz-video",
     "description": "Tranz Video is an extension that lets you translate any text inside a video.",
     "html_url": "https://github.com/activebook/tranz-video",

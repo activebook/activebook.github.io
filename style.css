@@ -746,6 +746,12 @@ img {
     overflow: hidden;
     background: rgba(0, 0, 0, 0.25);
     contain: paint;
+    border-bottom: 1px solid transparent;
+}
+
+[data-theme="light"] .project-media-wrapper {
+    background: rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .project-image {
@@ -765,6 +771,10 @@ img {
     filter: brightness(1.08) contrast(1.02);
 }
 
+[data-theme="light"] .project-card-link:hover .project-image {
+    filter: brightness(1.02) contrast(1.03);
+}
+
 .media-overlay {
     position: absolute;
     inset: 0;
@@ -780,12 +790,9 @@ img {
 }
 
 [data-theme="light"] .media-overlay {
-    background: linear-gradient(180deg, 
-        transparent 0%, 
-        transparent 40%, 
-        rgba(255, 255, 255, 0.55) 75%, 
-        rgba(255, 255, 255, 0.96) 100%
-    );
+    background: none;
+    opacity: 0;
+    display: none;
 }
 
 /* Radiant Holographic Horizontal Light Sweep on Hover */
@@ -807,6 +814,18 @@ img {
     mix-blend-mode: screen;
     pointer-events: none;
     z-index: 2;
+}
+
+[data-theme="light"] .media-shine-sweep {
+    background: linear-gradient(
+        110deg,
+        transparent 15%,
+        rgba(255, 255, 255, 0.15) 30%,
+        rgba(255, 255, 255, 0.45) 45%,
+        rgba(99, 102, 241, 0.3) 52%,
+        transparent 75%
+    );
+    mix-blend-mode: soft-light;
 }
 
 .project-card-link:hover .media-shine-sweep {
@@ -850,8 +869,10 @@ img {
 }
 
 [data-theme="light"] .media-type-badge {
-    background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-color: rgba(0, 0, 0, 0.08);
     color: var(--text-primary);
 }
 
@@ -877,9 +898,11 @@ img {
 }
 
 [data-theme="light"] .media-domain-pill {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: var(--text-primary);
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
 /* Card Content Area */

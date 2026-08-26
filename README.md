@@ -10,6 +10,9 @@ New worlds to explore
 
 ## Projects description
 
+- Glance [Glance](https://activebook.github.io/Glance/)
+Capture anything on your screen. Understand it instantly.
+
 - tranz-video [tranz-video](https://activebook.github.io/tranz-video/)
 Tranz Video is an extension that lets you translate any text inside a video.
 

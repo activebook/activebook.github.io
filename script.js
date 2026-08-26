@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Curated Craftsmanship & Domain Capability Metadata
     const repoCraftsmanship = {
+        'Glance': {
+            badge: 'AppKit • Vision AI',
+            highlight: 'Instant Screen Capture & Insight',
+            icon: 'fa-eye'
+        },
         'tranz-video': {
             badge: 'OCR & Video',
             highlight: 'In-Stream Subtitle Extraction',
@@ -146,10 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const desc = (repo.description || '').toLowerCase();
 
         const isAI = type.includes('agent') || type.includes('cli') || type.includes('mcp') ||
-                     name.includes('gllm') || desc.includes('llm') || desc.includes('model') || desc.includes('copilot');
+                     name.includes('gllm') || name === 'glance' || desc.includes('llm') || desc.includes('model') || desc.includes('copilot');
         
         const isNative = type.includes('macos') || type.includes('native') || type.includes('cv') ||
-                         name === 'tranz' || name.includes('sakana') || name.includes('wechat');
+                         name === 'tranz' || name === 'glance' || name.includes('sakana') || name.includes('wechat');
 
         const isExtension = type.includes('extension') || type.includes('chrome') || type.includes('vs code');
 
