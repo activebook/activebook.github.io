@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Curated Craftsmanship & Domain Capability Metadata
     const repoCraftsmanship = {
         'fast-furigana': {
-            badge: 'Chromium • Japanese NLP',
+            badge: 'Japanese Furigana',
             highlight: 'Instant Furigana Injection Engine',
             icon: 'fa-language'
         },
