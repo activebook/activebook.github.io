@@ -1,5 +1,14 @@
 [
   {
+    "name": "fast-furigana",
+    "description": "Ultra-fast, lightweight Japanese Furigana injector for Google Chrome.",
+    "html_url": "https://github.com/activebook/fast-furigana",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "JavaScript",
+    "type": "Chrome Extension"
+  },
+  {
     "name": "Glance",
     "description": "Capture anything on your screen. Understand it instantly.",
     "html_url": "https://github.com/activebook/Glance",

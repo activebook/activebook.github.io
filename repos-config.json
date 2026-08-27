@@ -1,6 +1,10 @@
 {
   "featuredRepos": [
     {
+      "name": "fast-furigana",
+      "type": "Chrome Extension"
+    },
+    {
       "name": "Glance",
       "type": "macOS App"
     },

@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Curated Craftsmanship & Domain Capability Metadata
     const repoCraftsmanship = {
+        'fast-furigana': {
+            badge: 'Chromium • Japanese NLP',
+            highlight: 'Instant Furigana Injection Engine',
+            icon: 'fa-language'
+        },
         'Glance': {
             badge: 'AppKit • Vision AI',
             highlight: 'Instant Screen Capture & Insight',
@@ -313,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="${repo.html_url}" class="project-card-link" target="_blank" rel="noopener noreferrer" style="animation-delay: ${delay};" aria-label="Explore ${repo.name} repository">
                     <article class="project-card">
                         <div class="project-media-wrapper">
-                            <img src="./images/${repo.name}.jpg" alt="${repo.name} Preview" class="project-image" loading="lazy" onerror="this.onerror=null;this.src='./images/icon.png';">
+                            <img src="./images/${repo.name}.jpg" alt="${repo.name} Preview" class="project-image" loading="lazy" onerror="if(!this.dataset.pngTried){this.dataset.pngTried='1';this.src='./images/${repo.name}.png';}else{this.onerror=null;this.src='./images/icon.png';}">
                             <div class="media-overlay"></div>
                             <div class="media-shine-sweep" aria-hidden="true"></div>
                             <span class="media-type-badge">${repo.type || 'Tool'}</span>

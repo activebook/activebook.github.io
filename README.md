@@ -10,6 +10,9 @@ New worlds to explore
 
 ## Projects description
 
+- fast-furigana [fast-furigana](https://activebook.github.io/fast-furigana/)
+Ultra-fast, lightweight Japanese Furigana injector for Google Chrome.
+
 - Glance [Glance](https://activebook.github.io/Glance/)
 Capture anything on your screen. Understand it instantly.
 
