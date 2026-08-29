@@ -326,7 +326,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="project-card-body">
                             <div class="project-header-row">
-                                <h3 class="project-title">${repo.name}</h3>
+                                <div class="project-identity-group">
+                                    <div class="project-icon-box">
+                                        <img src="./images/${repo.name}-icon.png" alt="${repo.name} Icon" class="project-icon-img" loading="lazy" onerror="this.onerror=null;this.src='./images/icon.png';">
+                                    </div>
+                                    <h3 class="project-title">${repo.name}</h3>
+                                </div>
                                 <span class="explore-icon-bubble" aria-hidden="true">
                                     <i class="fas fa-arrow-up-right-from-square"></i>
                                 </span>
