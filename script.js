@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Curated Craftsmanship & Domain Capability Metadata
     const repoCraftsmanship = {
+        'zenmux-chat': {
+            badge: 'EdgeOne • AI Workstation',
+            highlight: 'Serverless Multimodal AI Workstation',
+            icon: 'fa-microchip'
+        },
         'fast-furigana': {
             badge: 'Japanese Furigana',
             highlight: 'Instant Furigana Injection Engine',
@@ -155,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const type = (repo.type || '').toLowerCase();
         const desc = (repo.description || '').toLowerCase();
 
-        const isAI = type.includes('agent') || type.includes('cli') || type.includes('mcp') ||
-                     name.includes('gllm') || name === 'glance' || desc.includes('llm') || desc.includes('model') || desc.includes('copilot');
+        const isAI = type.includes('agent') || type.includes('cli') || type.includes('mcp') || type.includes('workstation') ||
+                     name.includes('gllm') || name === 'glance' || name.includes('zenmux') || desc.includes('llm') || desc.includes('model') || desc.includes('copilot') || desc.includes('ai');
         
         const isNative = type.includes('macos') || type.includes('native') || type.includes('cv') ||
                          name === 'tranz' || name === 'glance' || name.includes('sakana') || name.includes('wechat');
@@ -167,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         name.includes('speech') || name.includes('tts') || desc.includes('text-to-speech');
 
         const isTools = type.includes('worker') || type.includes('proxy') || type.includes('package') || 
-                        type.includes('learning') || name.includes('tunnel') || name.includes('updater') || name.includes('clash');
+                        type.includes('learning') || name.includes('tunnel') || name.includes('updater') || name.includes('clash') || name.includes('zenmux');
 
         return { isAI, isNative, isExtension, isVoice, isTools };
     }
@@ -308,21 +313,34 @@ document.addEventListener('DOMContentLoaded', () => {
         filtered.forEach((repo, idx) => {
             const delay = (idx % 6) * 0.08 + 's';
             const langColor = languageColors[repo.language] || 'var(--accent-indigo)';
+            const isPrivate = Boolean(repo.isPrivate || repo.private);
             const meta = repoCraftsmanship[repo.name] || {
                 badge: repo.type || 'Engineering Tool',
                 highlight: repo.type || 'System Utility',
                 icon: 'fa-cube'
             };
 
+            const domainPillHTML = isPrivate
+                ? `<span class="media-domain-pill private-pill"><i class="fas fa-lock text-amber"></i> ${meta.badge}</span>`
+                : `<span class="media-domain-pill"><i class="fas ${meta.icon}"></i> ${meta.badge}</span>`;
+
+            const exploreBubbleHTML = isPrivate
+                ? `<span class="explore-icon-bubble private-bubble" aria-hidden="true" title="Private System"><i class="fas fa-lock"></i></span>`
+                : `<span class="explore-icon-bubble" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>`;
+
+            const actionPillHTML = isPrivate
+                ? `<div class="action-explore-pill private-action"><i class="fas fa-lock text-amber"></i><span>Private Access</span></div>`
+                : `<div class="action-explore-pill"><span>View Architecture</span><i class="fas fa-arrow-right explore-arrow" aria-hidden="true"></i></div>`;
+
             const cardHTML = `
-                <a href="${repo.html_url}" class="project-card-link" target="_blank" rel="noopener noreferrer" style="animation-delay: ${delay};" aria-label="Explore ${repo.name} repository">
+                <a href="${repo.html_url}" class="project-card-link ${isPrivate ? 'is-private-card' : ''}" ${isPrivate ? 'data-is-private="true"' : 'target="_blank" rel="noopener noreferrer"'} style="animation-delay: ${delay};" aria-label="Explore ${repo.name} repository">
                     <article class="project-card">
                         <div class="project-media-wrapper">
                             <img src="./images/${repo.name}.jpg" alt="${repo.name} Preview" class="project-image" loading="lazy" onerror="if(!this.dataset.pngTried){this.dataset.pngTried='1';this.src='./images/${repo.name}.png';}else{this.onerror=null;this.src='./images/icon.png';}">
                             <div class="media-overlay"></div>
                             <div class="media-shine-sweep" aria-hidden="true"></div>
                             <span class="media-type-badge">${repo.type || 'Tool'}</span>
-                            <span class="media-domain-pill"><i class="fas ${meta.icon}"></i> ${meta.badge}</span>
+                            ${domainPillHTML}
                         </div>
                         <div class="project-card-body">
                             <div class="project-header-row">
@@ -332,12 +350,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                     </div>
                                     <h3 class="project-title">${repo.name}</h3>
                                 </div>
-                                <span class="explore-icon-bubble" aria-hidden="true">
-                                    <i class="fas fa-arrow-up-right-from-square"></i>
-                                </span>
+                                ${exploreBubbleHTML}
                             </div>
-                            <div class="project-highlight-badge">
-                                <i class="fas fa-bolt text-indigo"></i>
+                            <div class="project-highlight-badge ${isPrivate ? 'private-highlight' : ''}">
+                                <i class="fas ${isPrivate ? 'fa-shield-halved text-amber' : 'fa-bolt text-indigo'}"></i>
                                 <span>${meta.highlight}</span>
                             </div>
                             <p class="project-desc">${repo.description || 'No description provided.'}</p>
@@ -346,10 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span class="lang-dot" style="background-color: ${langColor};"></span>
                                     <span>${repo.language || 'Plain'}</span>
                                 </div>
-                                <div class="action-explore-pill">
-                                    <span>View Architecture</span>
-                                    <i class="fas fa-arrow-right explore-arrow" aria-hidden="true"></i>
-                                </div>
+                                ${actionPillHTML}
                             </div>
                         </div>
                     </article>
@@ -358,7 +371,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = cardHTML.trim();
-            const cardElement = tempDiv.firstChild;
+            const cardElement = tempDiv.firstElementChild;
+
+            // Intercept Private Repositories
+            if (isPrivate) {
+                cardElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openPrivateModal(repo);
+                });
+            }
 
             // Attach Mouse Spotlight Coordinate Tracking with Immediate Enter Sync
             const cardArticle = cardElement.querySelector('.project-card');
@@ -472,4 +493,45 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
     }
+
+    // 9. Private Repository Access Modal Subsystem
+    const privateModal = document.getElementById('private-repo-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalDismissBtn = document.getElementById('modal-dismiss-btn');
+    const modalRepoName = document.getElementById('modal-repo-name');
+    const modalRepoDesc = document.getElementById('modal-repo-desc');
+    const modalIconImg = document.getElementById('modal-repo-icon');
+
+    function openPrivateModal(repo) {
+        if (!privateModal) return;
+        if (modalRepoName) modalRepoName.textContent = repo.name;
+        if (modalRepoDesc) modalRepoDesc.textContent = repo.description || 'This codebase is maintained as an internal proprietary engineering system.';
+        if (modalIconImg) {
+            modalIconImg.src = `./images/${repo.name}-icon.png`;
+            modalIconImg.onerror = () => { modalIconImg.src = './images/icon.png'; };
+        }
+        privateModal.classList.add('active');
+        privateModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePrivateModal() {
+        if (!privateModal) return;
+        privateModal.classList.remove('active');
+        privateModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closePrivateModal);
+    if (modalDismissBtn) modalDismissBtn.addEventListener('click', closePrivateModal);
+    if (privateModal) {
+        privateModal.addEventListener('click', (e) => {
+            if (e.target === privateModal) closePrivateModal();
+        });
+    }
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && privateModal && privateModal.classList.contains('active')) {
+            closePrivateModal();
+        }
+    });
 });

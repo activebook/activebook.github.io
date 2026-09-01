@@ -10,6 +10,9 @@ New worlds to explore
 
 ## Projects description
 
+- zenmux-chat [zenmux-chat](https://activebook.github.io/zenmux-chat/)
+A high-performance, serverless personal AI workstation built on EdgeOne Pages (Global Edition): Modern Minimalist UI + Client-Side Multimodal Parsing Engine + Secure Edge Function Proxy + AI-Native Real-Time Web Search + Native Neural Voice Integration.
+
 - fast-furigana [fast-furigana](https://activebook.github.io/fast-furigana/)
 Ultra-fast, lightweight Japanese Furigana injector for Google Chrome.
 

@@ -1,6 +1,11 @@
 {
   "featuredRepos": [
     {
+      "name": "zenmux-chat",
+      "type": "AI Workstation",
+      "isPrivate": true
+    },
+    {
       "name": "fast-furigana",
       "type": "Chrome Extension"
     },

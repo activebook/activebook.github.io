@@ -1,5 +1,15 @@
 [
   {
+    "name": "zenmux-chat",
+    "description": "A high-performance, serverless personal AI workstation built on EdgeOne Pages (Global Edition): Modern Minimalist UI + Client-Side Multimodal Parsing Engine + Secure Edge Function Proxy + AI-Native Real-Time Web Search + Native Neural Voice Integration.",
+    "html_url": "https://github.com/xinasuka/zenmux-chat",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "TypeScript",
+    "type": "AI Workstation",
+    "isPrivate": true
+  },
+  {
     "name": "fast-furigana",
     "description": "Ultra-fast, lightweight Japanese Furigana injector for Google Chrome.",
     "html_url": "https://github.com/activebook/fast-furigana",

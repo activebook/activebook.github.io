@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=15">
 </head>
 
 <body>
@@ -79,7 +79,7 @@
             <!-- Dynamic Telemetry KPI Banner -->
             <div class="kpi-banner glass-card" id="kpi-banner">
                 <div class="kpi-item">
-                    <span class="kpi-val" id="kpi-projects-count">20</span>
+                    <span class="kpi-val" id="kpi-projects-count">21</span>
                     <span class="kpi-lbl"><i class="fas fa-cubes text-indigo"></i> Active Systems</span>
                 </div>
                 <div class="kpi-divider"></div>
@@ -226,8 +226,51 @@
         </div>
     </footer>
 
+    <!-- Glassmorphic Private Repository Access Modal -->
+    <div id="private-repo-modal" class="private-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="private-modal-card glass-card">
+            <button id="modal-close-btn" class="modal-close-icon" aria-label="Close dialog">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header-section">
+                <div class="modal-lock-orb">
+                    <i class="fas fa-lock lock-main-icon"></i>
+                    <div class="lock-glow-ring" aria-hidden="true"></div>
+                </div>
+                <div class="modal-repo-avatar-wrap">
+                    <img id="modal-repo-icon" src="./images/icon.png" alt="Repository Icon" class="modal-repo-avatar">
+                </div>
+                <h3 id="modal-title" class="modal-headline">Private Engineering System</h3>
+                <span class="modal-repo-badge" id="modal-repo-name">zenmux-chat</span>
+            </div>
+
+            <div class="modal-body-section">
+                <p class="modal-explanation">
+                    This repository is currently maintained as an <strong>internal proprietary codebase</strong>. Source access is restricted to authorized contributors.
+                </p>
+                <div class="modal-details-card">
+                    <i class="fas fa-quote-left quote-icon" aria-hidden="true"></i>
+                    <p id="modal-repo-desc" class="modal-repo-quote"></p>
+                </div>
+
+                <div class="modal-telemetry-tags">
+                    <span class="modal-tag"><i class="fas fa-shield-halved text-amber"></i> Internal System</span>
+                    <span class="modal-tag"><i class="fas fa-bolt text-indigo"></i> EdgeOne Pages</span>
+                    <span class="modal-tag"><i class="fas fa-code-commit text-cyan"></i> Active Development</span>
+                </div>
+            </div>
+
+            <div class="modal-actions-row">
+                <button id="modal-dismiss-btn" class="btn btn-primary-gradient modal-action-btn">
+                    <i class="fas fa-compass"></i> Explore Lab Showcase
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Application Script -->
-    <script src="script.js?v=12"></script>
+    <script src="script.js?v=15"></script>
 </body>
 
 </html>
