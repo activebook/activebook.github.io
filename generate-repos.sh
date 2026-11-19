@@ -77,14 +77,17 @@ while IFS=$'\t' read -r repo_name repo_type; do
         '{name, description, html_url, stargazers_count, forks_count, language, type: $type}')
     rm -f "$temp_file"
 
-    # Merge into EXISTING_JSON
-    # Remove old entry with same name if exists, then add new one
+    # Merge into EXISTING_JSON, updating in-place to preserve config ordering
     EXISTING_JSON=$(echo "$EXISTING_JSON" | jq --argjson new "$repo_json" --arg name "$repo_name" \
-        'map(select(.name != $name)) + [$new]')
+        'if any(.[]; .name == $name) then map(if .name == $name then $new else . end) else . + [$new] end')
 
     # Write to file after each success
     echo "$EXISTING_JSON" | jq '.' > "$OUTPUT_FILE"
     echo -e "${GREEN}   ✓ Successfully updated $repo_name${NC}"
 done < <(jq -r '.featuredRepos[] | "\(.name)\t\(.type)"' "$CONFIG_FILE")
+
+# Ensure final array order matches featuredRepos in CONFIG_FILE
+EXISTING_JSON=$(jq -s '([.[0].featuredRepos[].name]) as $order | .[1] | sort_by(.name as $n | $order | index($n) // 9999)' "$CONFIG_FILE" <(echo "$EXISTING_JSON"))
+echo "$EXISTING_JSON" | jq '.' > "$OUTPUT_FILE"
 
 echo -e "${GREEN}Successfully updated $OUTPUT_FILE!${NC}"

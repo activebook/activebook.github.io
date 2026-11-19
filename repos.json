@@ -1,5 +1,14 @@
 [
   {
+    "name": "auto-click",
+    "description": "Quiet Android auto-tapper: tap a 3×3 grid cell or exact spot on a timer, with a floating hand controller. No root, works offline, no ads.",
+    "html_url": "https://github.com/activebook/auto-click",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "language": "Kotlin",
+    "type": "Android App"
+  },
+  {
     "name": "zenmux-chat",
     "description": "A high-performance, serverless personal AI workstation built on EdgeOne Pages (Global Edition): Modern Minimalist UI + Client-Side Multimodal Parsing Engine + Secure Edge Function Proxy + AI-Native Real-Time Web Search + Native Neural Voice Integration.",
     "html_url": "https://github.com/xinasuka/zenmux-chat",

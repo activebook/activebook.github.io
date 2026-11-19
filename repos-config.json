@@ -1,6 +1,10 @@
 {
   "featuredRepos": [
     {
+      "name": "auto-click",
+      "type": "Android App"
+    },
+    {
       "name": "zenmux-chat",
       "type": "AI Workstation",
       "isPrivate": true

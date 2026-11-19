@@ -42,11 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
         'Dart': '#00B4AB',
         'HTML': '#E34F26',
         'CSS': '#563D7C',
-        'Shell': '#89E051'
+        'Shell': '#89E051',
+        'Kotlin': '#A97BFF'
     };
 
     // Curated Craftsmanship & Domain Capability Metadata
     const repoCraftsmanship = {
+        'auto-click': {
+            badge: 'Android • Accessibility',
+            highlight: 'Floating-Hand Auto Tapper',
+            icon: 'fa-hand-pointer'
+        },
         'zenmux-chat': {
             badge: 'EdgeOne • AI Workstation',
             highlight: 'Serverless Multimodal AI Workstation',
@@ -172,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         name.includes('speech') || name.includes('tts') || desc.includes('text-to-speech');
 
         const isTools = type.includes('worker') || type.includes('proxy') || type.includes('package') || 
-                        type.includes('learning') || name.includes('tunnel') || name.includes('updater') || name.includes('clash') || name.includes('zenmux');
+                        type.includes('learning') || type.includes('android') || name === 'auto-click' || name.includes('tunnel') || name.includes('updater') || name.includes('clash') || name.includes('zenmux');
 
         return { isAI, isNative, isExtension, isVoice, isTools };
     }

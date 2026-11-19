@@ -10,6 +10,9 @@ New worlds to explore
 
 ## Projects description
 
+- auto-click [auto-click](https://activebook.github.io/auto-click/)
+Quiet Android auto-tapper: tap a 3×3 grid cell or exact spot on a timer, with a floating hand controller. No root, works offline, no ads.
+
 - zenmux-chat [zenmux-chat](https://activebook.github.io/zenmux-chat/)
 A high-performance, serverless personal AI workstation built on EdgeOne Pages (Global Edition): Modern Minimalist UI + Client-Side Multimodal Parsing Engine + Secure Edge Function Proxy + AI-Native Real-Time Web Search + Native Neural Voice Integration.
 
