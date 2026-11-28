@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Curated Craftsmanship & Domain Capability Metadata
     const repoCraftsmanship = {
+        'read-along': {
+            badge: 'SwiftUI • PDFKit',
+            highlight: 'Synchronized PDF & Audio Reader',
+            icon: 'fa-book-open'
+        },
         'auto-click': {
             badge: 'Android • Accessibility',
             highlight: 'Floating-Hand Auto Tapper',

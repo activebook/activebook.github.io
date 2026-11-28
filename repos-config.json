@@ -1,6 +1,10 @@
 {
   "featuredRepos": [
     {
+      "name": "read-along",
+      "type": "macOS App"
+    },
+    {
       "name": "auto-click",
       "type": "Android App"
     },

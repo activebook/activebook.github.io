@@ -1,5 +1,14 @@
 [
   {
+    "name": "read-along",
+    "description": "ReadAlong is a native macOS reader designed for magazines, newspapers, journals, and books that come with companion narration audio. ",
+    "html_url": "https://github.com/activebook/read-along",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "language": "Swift",
+    "type": "macOS App"
+  },
+  {
     "name": "auto-click",
     "description": "Quiet Android auto-tapper: tap a 3×3 grid cell or exact spot on a timer, with a floating hand controller. No root, works offline, no ads.",
     "html_url": "https://github.com/activebook/auto-click",
